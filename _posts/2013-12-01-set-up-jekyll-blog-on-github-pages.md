@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Set up a Jekyll blog on github pages with custom domain
-category: [software]
+category: software
 tag: [markdown, github]
 ---
 
