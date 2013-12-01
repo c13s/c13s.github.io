@@ -1,0 +1,31 @@
+---
+layout: post
+title: A lightweight JavaCC Newick parser
+categories:
+- Bioinformatics
+- Programming
+tags:
+- Java
+- parser
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"4343193";s:7:"blog_id";s:7:"6714149";s:9:"mod_stamp";s:19:"2013-02-08
+    15:38:36";}
+  _oembed_565eba3f993fff10f97a41c429913b93: '{{unknown}}'
+  _oembed_ee3f028937306022225cf018ea4c55ae: '{{unknown}}'
+  _oembed_d0ed74cba85699bbedb77cd352c69d5b: '{{unknown}}'
+  _elasticsearch_indexed_on: '2013-02-07 21:36:42'
+---
+I could not easily find a lightweight <a href="http://en.wikipedia.org/wiki/Newick_format">Newick</a> parser written in Java. Newick parsers included in bioinformatics tools seem to parse into some customized complicated tree structure, so I decide to spend a few hours to write one myself.
+
+With JavaCC, the parser is just a few lines of code. It builds a very simple tree structure which could be easily converted to any more complex tree structure.
+
+A binary jar file is here: <a href="https://bitbucket.org/djiao/a-lightweight-javacc-newick-parser/downloads/newick-1.0-SNAPSHOT.jar">https://bitbucket.org/djiao/a-lightweight-javacc-newick-parser/downloads/newick-1.0-SNAPSHOT.jar</a>. I tested it with a newick file (downloaded from <a href="http://users-birc.au.dk/zxr/phyloprof/taxomonicTreeNCBI_bin.nwk">http://users-birc.au.dk/zxr/phyloprof/taxomonicTreeNCBI_bin.nwk</a>) and it worked pretty well. To run it, simply do
+<code>
+&gt; cat taxomonicTreeNCBI_bin.nwk | java -cp newick-1.0-SNAPSHOT.jar newick.NewickParser
+</code>
+
+Sources are here: <a href="https://bitbucket.org/djiao/a-lightweight-javacc-newick-parser/src">https://bitbucket.org/djiao/a-lightweight-javacc-newick-parser/src </a>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'Paper Summary: "SAR Index: Quantifying the Nature of Structure-Activity Relationships"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '4814330904992314684'
+  _elasticsearch_indexed_on: '2008-10-10 15:44:00'
+---
+The Peltason paper<sup>1</sup> discussed the development of a function term "SAR Index" (SARI) that is based on the pairwise 2D similarity and compound potency. They showed how to use SARI score to measure the characteristic of SARS and categorize them as continuous, discontinuous, heterogeneous-relaxed, or heterogeneous-constrained. SARI value is based on the complementary score value of two scores that can be used to measure the continuity and discontinuity of SARs, score<sub>cont</sub>, and score<sub>disc</sub>. The continuity score is calculated by potency-weighted mean of pairwise similarity, and the discontinuity score is the mean of multiplication of the potency difference and the similarity of ligand pairs with the similarity value over a threshold. Thus, ligands with high potency but low potency difference will contribute more to the continuity score, and similar ligands with big potency differences will contribute to the discontinuity score. From how the continuity score is calculated, we can also derive that highly similar ligands with high potency but low potency difference will contribute less than less similar ligands, which means that the continuity score also depends on the diversity of the ligands of high potency and low potency differences. Based on the SARI, SARs can be categorized as continuous if it has high SARI score (high continuity score but low discontinuity score), discontinuous on the contrary. Discontinuous SARS are dominated by the influence of an activity cliff, as shown by the authors with two sample data sets: Ribonuclease, and Adenosine Deaminase. If both continuity score and discontinuity score are high, then the SAR has medium SARI score, and it's called heterogeneous-relaxed, which means that in this kind of SAR the ligands of similar high potency are structurally diverse, and structurally similar ligands can have very significantly different potency. The last category of SAR is heterogeneous-constrained, which is characterized by medium SARI (low continuity score and low discontinuity score). In this kind of SAR, the low continuous score is caused by a structurally constraint. The author studied results from 6 enzyme inhibitor sets to show how the SARI can quantitatively describe the nature of SARs. The authors concluded that SARI can be used to classify SARs quantitatively and also in other practices such as identification of the structurally diversity of ligands with similar activity. 1. Peltason L, Bajorath J. SAR Index: Quantifying the Nature of Structure-Activity Relationships. J. Med. Chem. 2007 Nov 15;50(23):5571-5578. (<a href="http://dx.doi.org/10.1021/jm0705713">10.1021/jm0705713</a>)

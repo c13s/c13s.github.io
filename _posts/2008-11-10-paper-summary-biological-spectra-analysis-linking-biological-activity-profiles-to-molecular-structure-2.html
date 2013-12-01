@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Paper summary: "Biological spectra analysis: Linking biological activity profiles
+  to molecular structure"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '8060823539856795696'
+  _elasticsearch_indexed_on: '2008-11-10 21:34:00'
+---
+The Fliri paper<sup>1</sup> discussed a molecular property descriptor that uses biological activity profiles. The descriptor is obtained by using the percent inhibition values at single drug concentration in bioassays that represent a cross section of the proteome, or as named by the authors, biological spectra. The authors uses the percent inhibition values of 1567 structurally diverse compounds and 92 ligand-binding assays from the BioPrint database to construct the spectra. Then they use cosine correlation to calculate the biospectra similarities between compounds. By using the biospectra similarities, they searched the dataset with clotrimazole and tioconazole as entry points. The two compounds were chosen because their target was not in the 92 assays in the biospectra. Both searches returned structurally similar compounds when the similarity ranking is over 0.8. They also compared spectra by hierarchically clustering the datasets by using confidence in cluster similarity. It also identifies structurally similar compounds when CCS values are over 0.8. They authors also used structure information of molecules to predict the biospectra. They added four compounds that were not in the 1567 compounds dataset and reclustered the new 1571 datasets. By comparing the structures of the compounds in the new clusters where the four new compounds were placed, the authors showed that biospectra can be very precise in describing the molecular peroperties and is capable of differentiating molecules on the basis of single atom pair differences. I think activity cliff can also be identified by comparing the biospectra of compounds. However, I am not very clear on how to build such biospectra with new compounds without the assay data. 1. Fliri, A. F., et al.,"Biological Spectra Analysis: Linking Biological Activity Profiles to Molecular Spectra", Proc. Natl. Acad. Sci., 2005, 102, 261-266

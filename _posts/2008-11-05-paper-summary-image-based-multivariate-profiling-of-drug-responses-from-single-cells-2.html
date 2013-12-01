@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Paper Summary: "Image-based multivariate profiling of drug responses from
+  single cells"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '7536588003204627137'
+  _elasticsearch_indexed_on: '2008-11-05 04:11:00'
+---
+The Loo paper<sup>1</sup> presented an drug response profiling method that addresses three challenges in data analysis of high content screening (HCS): 1. transforming HCS measurements data to multivariate profiles that are interpretable; 2. feature selection and reduction; 3. how to determine dosage range and multiphasic drug response. In their approach, they uses a support vector machine (SVM) with linear kernal function to determine a hyperplane between treated and control distributions of measured data extracted from images. The unit vector and the hyperplanes are used as compound dosage profiles. Then they used an SVM recursive feature elimination (SVMRFE) algorithm to remove features that are redundant and less interpretable. Then they extracted dosage profile (d-profile) based on titration clustering, which can reveal that multiphasic drug effects. Finally they used the d-profiles in applications such as drug screening, phenotypic change detection and category prediction.

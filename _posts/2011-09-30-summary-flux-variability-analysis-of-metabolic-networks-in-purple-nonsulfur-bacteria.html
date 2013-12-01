@@ -1,0 +1,37 @@
+---
+layout: post
+title: 'Summary:  Flux Variability Analysis of Metabolic Networks in Purple Nonsulfur
+  Bacteria'
+categories:
+- Bioinformatics
+- Paper Summary
+tags:
+- Bacteria
+- FBA
+- Metabolic Network
+status: publish
+type: post
+published: true
+meta:
+  _elasticsearch_indexed_on: '2011-09-30 20:03:20'
+---
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/21943387">Hadicke <em>et al</em> published a research paper in BMC Systems Biology</a>. The group modeled metabolic networks of purple nonsulfur bacteria (PNSB) using flux variability analysis (FVA). FVA is slightly different to flux balance analysis (FBA) in that in the former, the biological objective is in its contraints, not the value to optimize.
+
+So FBA can be formulated as
+$latex max_{\mathbf{v}}\,\mathbf{Z=c^{T}\cdot v} \\
+s.t. \\
+\mbox{\textbf{S}\ensuremath{\cdot}\textbf{v}=\textbf{0}} \\
+\mathbf{v_{l}\leq v}\leq\mathbf{v_{u}}$
+
+where Z is the biological objective function, c is a vector of coefficients that define how much each reaction contribute to the objective. v is the vector of fluxes of each reaction, and it is unknown. S is a m*n matrix. It contains the stoichiometry of the metabolic networks. $latex \mathbf{v_{l}}$ and $latex \mathbf{v_{u}}$ are the lower bounds and upper bounds of $latex \textbf{v}$.
+
+Then FVA can be formulated as
+$latex min\/max_{\mathbf{v}}\,v_i \\
+s.t. \\
+\mbox{\textbf{S}\ensuremath{\cdot}\textbf{v}=\textbf{0}} \\
+\mathbf{Z=c^{T}\cdot v} \\
+\mathbf{v_{l}\leq v}\leq\mathbf{v_{u}}$
+
+Note that now $latex \mathbf{Z}$ is a known value. So this means that we already know the optimal of the biological objective, but we want to find out the range (min, max) of certain fluxes that fit the optimal solution. This gives the variability of $latex \mathbf{v}$. For example, in certain conditions, some reactions might changes but without changing the outcome. FVA analysis will be able to identify such reactions.
+
+This paper applied FVA to the analysis of the metabolic network in photosynthetic PNSB. The authors tested their model in several conditions. This paper is particularly interesting to me because of the methods FVA. The original paper of FVA is published in 2003. (<a href="http://www.ncbi.nlm.nih.gov/pubmed/14642354">pubmed</a>)

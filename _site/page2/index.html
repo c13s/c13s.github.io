@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<! -- header.html -->
+<meta charset="utf-8">
+<title> C-13-S </title>
+
+<meta name="author" content="Dazhi Jiao">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+ <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Le styles -->
+<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+<link href="/assets/css/style.css" rel="stylesheet">
+
+<!-- Le fav and touch icons -->
+<!-- Update these with your own images
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+-->
+
+ <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+<! -- header.html end -->
+
+
+   <body>
+   		<nav class="navbar navbar-default visible-xs" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/jiaoda">
+		      <i class="fa fa-github"></i>
+		    </a>
+		    
+		    
+		    <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/djiao">
+		      <i class="fa fa-twitter"></i>
+		    </a>
+		    
+		    
+		    <a type="button" class="navbar-toggle nav-link" href="mailto:dazhi.jiao@gmail.com">
+		      <i class="fa fa-envelope"></i>
+		    </a>
+		    
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/3753f3aa8631c46c0e51525edf9bbbd7?s=35" class="img-circle" />
+				C-13-S
+			</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="/">Home</a></li>
+			  <li><a href="/categories.html">Categories</a></li>
+  			  <li><a href="/tags.html">Tags</a></li>
+			</ul>
+		  </div><!-- /.navbar-collapse -->
+		</nav>
+
+		<div class="col-sm-3 sidebar hidden-xs">
+			<! -- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/3753f3aa8631c46c0e51525edf9bbbd7?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">C-13-S</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	PhD Candidate in Informatics
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/jiaoda">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/djiao">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:dazhi.jiao@gmail.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		
+	</ul>
+</div>
+
+	
+
+<! -- sidebar.html end -->
+
+		</div>
+
+		<div class="col-sm-9 col-sm-offset-3">
+			<div class="page-header">
+  <h1> </h1>
+</div>
+
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                September
+                13th,
+                
+                2010
+            </span>
+
+            <h2>
+                <a href="/cheminformatics/paper%20summary/2010/09/13/drug-mode-of-action-and-repositioning-from-gene-expression-data.html">Drug Mode of Action and repositioning from gene expression data</a>
+            </h2>
+
+            <div>
+                
+                    
+                        Iorio, F. et al published a paper in the PNAS journal. They built a drug network out of gene expression data from small molecule screens. Using network analysis tools, they were able to group drugs into communities using network analysis. They claim that the compounds in the same community tend to have similar MoA, or act on similar biological pathways. They correctly predicted nine anticancer compounds and discovered an unreported effect for an existing drug.
+
+There are several interesting things in their work. First, they developed a new algorithm to merge the gene expression data from different cell lines given the same compound. This aggregation algorithm uses several techniques such as Spearman's footrule, Borda Merging Method and the Kruskal Algorithm.
+
+Secondly, they calculated the drug similarity based on the merged list of gene ranks from the previous step based on results from Gene Set Enrichment Analysis (GSEA). This is because the list of expressions are different for two different compounds.
+
+Thirdly, they compared the drug similarity measure with chemical similarity measures using fingerprints or electrotopological descriptors. The results are quite uncorralted with very low pearson correlation coefficient. An interesting extension of this could be the activity cliffs - very similar compounds that having completely different biological activity profile.
+
+One limitation of this method is that you need to have a gene expression profile of a compound to be able to use it, similar to the original connectivity map approach. The other concern is that for compounds that have inconsistent effects on different cell lines. But as the authors mentioned, "when no information on the drug MoA is available a priori, the best strategy is still
+to merge profiles from multiple cell lines".
+
+Iorio, F. et al. Discovery of drug mode of action and drug repositioning from transcriptional responses. <span style="font-style:italic;">Proceedings of the National Academy of Sciences</span> <span style="font-weight:bold;">107</span>, 14621 -14626 (2010). <span class="slug-metadata-note ahead-of-print">doi:<span class="slug-doi" title="10.1073/pnas.1000138107">10.1073/pnas.1000138107
+</span></span>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                September
+                8th,
+                
+                2010
+            </span>
+
+            <h2>
+                <a href="/chemical%20of%20today/2010/09/08/cheical-of-today-cephalosporin.html">Chemical of this week - Cephalosporin</a>
+            </h2>
+
+            <div>
+                
+                    
+                        I have a bad cough this week, so I did a little lookup of an antibiotics - Cephalosporins. Cephalosporins are a class of<strong> </strong><a title="Beta-lactam antibiotic" href="http://en.wikipedia.org/wiki/Beta-lactam_antibiotic">β-lactam antibiotics</a> originally derived from <em><a title="Acremonium" href="http://en.wikipedia.org/wiki/Acremonium">Acremonium</a></em>.
+<img style="max-width:800px;float:right;margin-top:10px;margin-bottom:10px;margin-left:10px;" src="http://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Cephalosporin_core_structure.svg/220px-Cephalosporin_core_structure.svg.png" alt="" />
+<blockquote>Cephalosporins disrupts the synthesis of the peptidoglycan layer of bacterial cell walls. The petidoglycan layer is important for cell wall structural integrity. The final transpeptidation step in the synthesis of the peptidoglycan is facilitated by <a title="Transpeptidase" href="http://en.wikipedia.org/wiki/Transpeptidase">transpeptidases</a> known as <a class="mw-redirect" title="Penicillin-binding protein" href="http://en.wikipedia.org/wiki/Penicillin-binding_protein">penicillin-binding proteins</a> (PBPs). PBPs bind to the D-Ala-D-Ala at the end of muropeptides (peptidoglycan precursors) to crosslink the peptidoglycan. <a title="Beta-lactam antibiotic" href="http://en.wikipedia.org/wiki/Beta-lactam_antibiotic">Beta-lactam antibiotics</a> mimic this site and competitively inhibit PBP crosslinking of peptidoglycan.</blockquote>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                September
+                7th,
+                
+                2010
+            </span>
+
+            <h2>
+                <a href="/chemical%20of%20today/2010/09/07/chemical-of-today-bpa.html">Molecule of this week - BPA</a>
+            </h2>
+
+            <div>
+                
+                    
+                        &nbsp;
+
+This week's molecule is BPA, or bisphenol-A. New York time has a long article about the research over this controversial chemical, mended with some political background. Details at <a href="http://www.nytimes.com/2010/09/07/science/07bpa.html?pagewanted=1&amp;ref=science">In Feast of Data on BPA Plastic, No Final Answer - NYTimes.com</a>
+
+<img style="max-width:800px;float:right;margin-top:10px;margin-bottom:10px;margin-left:10px;" title="Estrone (one major type of estrogen)" src="http://upload.wikimedia.org/wikipedia/en/thumb/7/77/Estrone2.png/200px-Estrone2.png" alt="Estrone (one major type of estrogen)" />From the article, there is no decisive results to testify BPA's effects on human bodies. But it doesn't mean there is no results. Rather, scientists are still debating over whether BPA is toxic or not, mainly because unreproducible results. Part of the reasons of the conflicting results, as the article pointed out, is that "different laboratories have studied the chemical in different ways". The conflicting results have even produced conflicts between scientists. It's interesting to read that "researchers who study it argue bitterly at conferences", and "At one such meeting, scientists in the audience said, “We don’t want to hear you two speak until you get this straightened out,” ".
+
+The articles goes on with recent development in the research, and mentioned some efforts in reconciling the disputes. One biggest dispute is that low dosage of BPA turns out to have worse effects in animal studies than higher dosages. From endocrinologists' point of view, it makes sense because BPA is no regular toxicant, but it "acts like a hormone", and "hormones can act at extremely low doses".
+
+So much about the article, and here is the chemistry about BPA.
+
+BPA has two phenol functional groups, and it is used to make <a class="zem_slink" title="Polycarbonate" href="http://en.wikipedia.org/wiki/Polycarbonate" rel="wikipedia">polycarbonate</a> plastic that are used in almost everything we use that are plastic, including food containers and baby bottles (in some states in the USA, BPA bottles is already banned in Canada, as well as some states in the US). <img style="max-width:800px;float:right;margin-top:10px;margin-bottom:10px;margin-left:10px;" title="DES" src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Diethylstilbestrol.png/220px-Diethylstilbestrol.png" alt="DES" />
+
+Why is BPA toxic? Because it can bind to estrogen receptors, though the binding is much weaker than the body's own estrogen. Estrogen is assotiated with many horrible diseases, such as cancers, obesity, immune system diseases, and behavior problems. BPA could also bind to receptors for male hormone and <a class="zem_slink" title="Thyroid hormone" href="http://en.wikipedia.org/wiki/Thyroid_hormone" rel="wikipedia">thyroid hormone</a>. DES (diethylstibestrol) is a disastrous example of an <a class="zem_slink" title="Endocrine disruptor" href="http://en.wikipedia.org/wiki/Endocrine_disruptor" rel="wikipedia">endocrine disruptor</a>, as mentioned in the <a class="zem_slink" title="New York Times" href="http://www.newyorktimes.com" rel="homepage">NYTimes</a> article. It was used as a drug to prevent miscarriage for pregnant women in 1950s. It could bind to estrogen receptors much stronger than BPA, and has caused sever problems such as cancers, and even affects the offsprings of the womens who took it. What's this chemical?
+
+(Images: BPA, Estrone, and DES. Curtosey of wikipedia)
+<div class="zemanta-pixie" style="margin-top:10px;height:15px;"><a class="zemanta-pixie-a" title="Enhanced by Zemanta" href="http://www.zemanta.com/"><img class="zemanta-pixie-img" style="float:right;" src="http://img.zemanta.com/zemified_e.png?x-id=4a0dc301-2ac2-4503-a54b-cb877e60821f" alt="Enhanced by Zemanta" /></a></div>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                August
+                3rd,
+                  
+                2010
+            </span>
+
+            <h2>
+                <a href="/bioinformatics/2010/08/03/cytoscape-retreat.html">Cytoscape Retreat</a>
+            </h2>
+
+            <div>
+                
+                    
+                        This summer I am working on a GSoC project (Gene Expression Reader plugin) for cytoscape again, and as a GSoC student, I got a chance to go to the <a href="http://cytoscape.wodaklab.org/wiki/CytoscapeRetreat2010">2010 Cytoscape summer retreat</a> in Ann Arbor Michigan, and met several mentors, and listened to several very interesting talks. <br /><br />I talked to Alex Pico, my direct mentor on the Express Reader plugin, also Scooter and Daniele. The face to face meeting turns out to be very efficient :) and we clarified several uncertainties in the project design. It's also interesting to learn some history of the Cytoscape, and link faces to some familiar names in mailing lists. <br /><br />One of the interesting talk is about a cytoscape plugin that can explore open linked data (LOD), given by Eric Neumann. He talked about a SPARQL plugin that can be used to query LOD data, and gave quite a few case studies on how to use the plugin to query and visualize data that are related to drug discovery.&nbsp; It was related to the work that is being done in the Wild's group I worked with last year (chem2bio2rdf). Although I am not actively involved in that project any more, it's exciting to see that the data could be potentially put into real use. <br /><br />Dr Lee Hood gave a inspiring talk on the future role of systems biology to <a href="http://www.systemsbiology.org/intro_to_isb_and_systems_biology/Predictive_Preventive_Personalized_and_Participatory">P4 medicine</a> (predictive, preventive, personalized, participatory). There are several other interesting talks and fun posters too. <br /><br />Finally, the location of the meeting was in a big research building that was belong to Pfizer, and was recently bought to UM, but was still pretty much vacant. It's a huge building and very nice facilities, but so quiet as we are the only group of people in it. <br />
+
+Update on 9/3: It seems the videos of all talks are uploaded now (<a href="http://cytoscape.wodaklab.org/wiki/CytoscapeRetreat2010">http://cytoscape.wodaklab.org/wiki/CytoscapeRetreat2010</a>)
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                July
+                23rd,
+                  
+                2010
+            </span>
+
+            <h2>
+                <a href="/programming/2010/07/23/igraph-example-edge-labeled-graph-or-weighted-graph.html">igraph example: edge-labeled graph or weighted graph</a>
+            </h2>
+
+            <div>
+                
+                    
+                        Here is an example of how to create a edge-labeled graph using <a href="http://igraph.sourceforge.net/">igraph</a>.
+[sourcecode]
+&gt; a  
+a
+[,1] [,2] [,3]
+[1,] 0 2 1
+[2,] 2 0 3
+[3,] 1 3 0
+&gt; g1  
+g1
+Vertices: 3
+Edges: 6
+Directed: TRUE
+Edges:
+
+[0] 0 -&gt; 1
+[1] 0 -&gt; 2
+[2] 1 -&gt; 0
+[3] 1 -&gt; 2
+[4] 2 -&gt; 0
+[5] 2 -&gt; 1
+&gt; E(g1)$weight
+[1] 2 1 2 3 1 3
+&gt; E(g1)
+Edge sequence:
+
+[0] 0 -&gt; 1
+[1] 0 -&gt; 2
+[2] 1 -&gt; 0
+[3] 1 -&gt; 2
+[4] 2 -&gt; 0
+[5] 2 -&gt; 1
+&gt; get.adjacency(g1, attr=&quot;weight&quot;)
+[,1] [,2] [,3]
+[1,] 0 2 1
+[2,] 2 0 3
+[3,] 1 3 0
+[/sourcecode]
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                July
+                21st,
+                  
+                2010
+            </span>
+
+            <h2>
+                <a href="/cheminformatics/machine%20learning/paper%20summary/2010/07/21/paper-summary-generative-models-for-chemical-structures.html">Paper Summary: Generative Models for Chemical Structures</a>
+            </h2>
+
+            <div>
+                
+                    
+                        Generative Models for Chemical Structures, David White, Richard C. Wilson. Journal of Chemical Information and Modeling Article ASAP
+
+An interesting paper published on JCIM. The authors created a GMM (<a class="zem_slink" title="Mixture model" rel="wikipedia" href="http://en.wikipedia.org/wiki/Mixture_model">Gaussian mixture model</a>) based on properties of active compounds over targets, and used the model to generate more molecules that are likely to be active. Each compound is represented based on properties extracted from a graph representation of it, and <a class="zem_slink" title="Principal component analysis" rel="wikipedia" href="http://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a> conducted to reduce dimensionality. Then they sample from the built GMM, and map the samples back to a molecule.
+
+Testing this method on DUD data sets, they authors showed that molecules generated using this method are similar to the compounds in the input sets, and docking results show that the molecules are likely to be active against a target of the input molecules.
+
+<a href="http://pubs.acs.org/doi/full/10.1021/ci9004089">Generative Models for Chemical Structures - Journal of Chemical Information and Modeling (ACS Publications)</a>
+<div class="zemanta-pixie" style="margin-top:10px;height:15px;"><a class="zemanta-pixie-a" title="Enhanced by Zemanta" href="http://www.zemanta.com/"><img class="zemanta-pixie-img" style="border:medium none;float:right;" src="http://img.zemanta.com/zemified_e.png?x-id=7a2eaa9b-f00c-4d89-ae9a-0e001d05af82" alt="Enhanced by Zemanta" /></a></div>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                April
+                13th,
+                
+                2010
+            </span>
+
+            <h2>
+                <a href="/machine%20learning/programming/2010/04/13/add-noise-to-data.html">Add noise to data</a>
+            </h2>
+
+            <div>
+                
+                    
+                        There are two easy ways to add noise, by scale the original data, or by mask some noise on the data.
+First for a simple function $latex y=\sin(x) $ , the following matlab code add 10% noise to it.
+
+[sourcecode language="matlab"]
+N = 100;
+x = linspace(-pi, pi, N);
+y = sin(x);
+plot(x, y, 'r');
+hold on;
+
+% add 10% noise based on gaussian
+scale = 0.1;
+n1 = randn(1, N); % noise with mean=0 and std=1;
+y1 = y + n1.*y*scale;
+plot(x, y1, 'g');
+
+% mask signal with noise
+n2 = 0.1*randn(1,N)*sqrt(max(abs(y))); % noise with mean=0 and %std=max(amplitude);
+y2 = y + n2;
+plot(x, y2, 'b');
+
+% Of course we can combine the two
+y3 = y1 + n2;
+plot(x, y3, 'm');
+[/sourcecode]
+
+The final result looks like this:
+<img src="http://c13s.files.wordpress.com/2010/04/noise-sin.png" alt="y=sin(x)" width="500px">
+
+We can also try to add noise to a more complicated synthetic data. For example, the famous swiss roll data<a id="ad-f1" href="#ad-1"><sup>[1]</sup></a> in <a class="zem_slink" title="Nonlinear dimensionality reduction" rel="wikipedia" href="http://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction">manifold learning</a>. First, we can generate the dataset by this function:
+$latex t=\frac{3}{2}\cdot\pi\cdot(1+2r)\,where\,r\ge 0$
+$latex x=t\cdot\cos(t) $
+$latex y=t\cdot\sin(t) $
+$latex z\in(z_{1}, z_2),\,where\,z_1, z_2\in\mathbb{R} $
+Plot a <a class="zem_slink" title="Scatter plot" rel="wikipedia" href="http://en.wikipedia.org/wiki/Scatter_plot">scatter plot</a> of $latex (x, y, z)$ will give us a swiss roll dataset. For example, the following matlab code will create this figure.
+[sourcecode language="matlab"]
+N = 500;
+r = linspace(0,1,N);
+t = (3*pi/2)*(1+2*r);
+x = t.*cos(t);
+y = t.*sin(t);
+z = 20*rand(1,N);
+scatter3(x, y, z, 12, t, 'filled');
+[/sourcecode]
+<img src="http://c13s.files.wordpress.com/2010/04/swiss-roll.png" alt="swiss roll data without noise" width="500px">
+
+Now after adding noise. the <a class="zem_slink" href="http://en.wikipedia.org/wiki/Standard_deviation" title="Standard deviation" rel="wikipedia">standard deviation</a> of the noise is 2% of smallest dimension of the <a class="zem_slink" href="http://en.wikipedia.org/wiki/Minimum_bounding_box" title="Minimum bounding box" rel="wikipedia">bounding box</a> enclosing the data (as discussed in <sup><a id="ad-f2" href="#ad-2">[2]</a></sup>)
+[sourcecode language="matlab"]
+mindim = min(max(y)-min(y), max(x)-min(x));
+x = x+0.02*randn(1,N)*sqrt(mindim);
+y = y+0.02*randn(1,N)*sqrt(mindim);
+scatter3(x, y, z, 12, t, 'filled');
+[/sourcecode]
+<img src="http://c13s.files.wordpress.com/2010/04/noise-swiss-roll.png" alt="swiss roll data with noise" width="500px">
+
+<a id="ad-1" href="#ad-f1">1</a>. Tenenbaum, J.B., Silva, V.D. &amp; Langford, J.C. A Global Geometric Framework for Nonlinear Dimensionality Reduction. Science 290, 2319-2323 (2000).
+<a id="ad-2" href="#ad-f2">2</a>. Balasubramanian, M., Schwartz, E.L., Tenenbaum, J.B., de Silva, V. &amp; Langford, J.C. The Isomap Algorithm and Topological Stability. Science 295, 7a (2002).
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="zemanta-pixie" style="margin-top:10px;height:15px;"><a class="zemanta-pixie-a" title="Enhanced by Zemanta" href="http://www.zemanta.com/"><img class="zemanta-pixie-img" style="border:medium none;float:right;" src="http://img.zemanta.com/zemified_e.png?x-id=bfb5dc0c-5eaf-4328-bb9e-7b2e379f11d1" alt="Enhanced by Zemanta"></a></div>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                April
+                13th,
+                
+                2010
+            </span>
+
+            <h2>
+                <a href="/fun/2010/04/13/96.html">Dimension</a>
+            </h2>
+
+            <div>
+                
+                    
+                        <img src="http://imgs.xkcd.com/comics/flatland.png" alt="dimension" />
+Source: <a href="http://xkcd.com/721/">http://xkcd.com/721/</a>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                April
+                2nd,
+                  
+                2010
+            </span>
+
+            <h2>
+                <a href="/fun/2010/04/02/rocks-computing-and-morning-class.html">Rocks, computing, and morning class</a>
+            </h2>
+
+            <div>
+                
+                    
+                        If I could have infinite time and space ...
+
+<img src="http://imgs.xkcd.com/comics/a_bunch_of_rocks.png" alt="" />
+
+<a href="http://xkcd.com/505/">Cartoon</a> courtesy of <a href="http://xkcd.com">xkcd </a>
+<div class="zemanta-pixie"><img class="zemanta-pixie-img" src="http://img.zemanta.com/pixy.gif?x-id=a5445dc2-bbdc-829c-88c7-e24a8142bd68" alt="" /></div>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                October
+                7th,
+                
+                2009
+            </span>
+
+            <h2>
+                <a href="/news/2009/10/07/nobel-prize-in-chemistry-how-ribosome-pieces-together-proteins.html">Nobel Prize in Chemistry: How ribosome pieces together proteins?</a>
+            </h2>
+
+            <div>
+                
+                    
+                        <div><a href='http://www.scientificamerican.com/article.cfm?id=unraveling-the-ribosome-nobel'>Unraveling the Ribosome: Chemistry Nobel Awarded to Modelers of Living Cells' Protein-Maker: Scientific American</a><br><blockquote>The 2009 Nobel Prize in chemistry will be split among three researchers who, over the course of the past two decades, puzzled out—at the atomic level—the function of the ribosome in piecing together proteins.<br><br>The prize will be equally split between biophysicist Venkatraman Ramakrishnan of the MRC Laboratory of Molecular Biology in Cambridge in the UK, biochemist Thomas Steitz of Yale University and molecular biologist Ada Yonath of the Weizmann Institute of Science in Rehovot, Israel, for their work in using X-ray crystallography to get a precise, atomic-scale map of the ribosome—the protein-making machine in all cells with nuclei that makes life possible.</blockquote><br><br><div class='zemanta-pixie'><img src='http://img.zemanta.com/pixy.gif?x-id=18dde1cc-1a1c-8bf9-b1f3-3e8c200592e7' alt=''></div></div>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+<hr/>
+
+<ul class="pager"> 
+
+  
+    <li class="previous">
+      
+        <a href="/">&larr; Newer</a>
+      
+    </li>
+  
+  
+  <li>
+          <span class="page_number">Page: 2 of 5</span>
+  </li>
+
+  
+    <li class="next">
+            <a href="/page3">Older &rarr;</a>
+    </li>
+  
+
+</ul>
+
+
+
+
+			<!-- footer.html -->
+<footer>
+ <hr/>
+ <p>
+ 	&copy; 2013 Dazhi Jiao with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+ </p>
+</footer>
+
+<!-- footer.html end -->
+
+
+		</div>
+
+    
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-7715423-15']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+   </body>
+
+</html>
+
+

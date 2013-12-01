@@ -1,0 +1,17 @@
+---
+layout: post
+title: Install RMySQL on Windows 7 (64bit)
+categories:
+- Programming
+tags:
+- R
+status: publish
+type: post
+published: true
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"4343193";s:7:"blog_id";s:7:"6714149";s:9:"mod_stamp";s:19:"2012-11-27
+    18:28:24";}
+  _publicize_pending: '1'
+  _elasticsearch_indexed_on: '2012-11-27 18:27:16'
+---
+<p>RMySQL 0.9.3; MySQL 5.5.28; R 2.15.1; RTools: 2.15; Windows 7 64bit</p><p>This might not be as hard as it sounds but I did spend a couple of hours on installing RMySQL. Here are the steps</p><ol><li>Install RTools if you haven't done it. Add "C:\Rtools\bin;C:\Rtools\gcc-4.6.3\bin" in your path (Environement Variables in System Advanced Settings)</li><li>Add "MYSQL_HOME=C:/Program Files/MySQL/MySQL Server 5.5" in Environment Variables. </li><li>Copy libmysql.dll from C:/Program Files/MySQL/MySQL Server 5.5/lib to C:/Program Files/MySQL/MySQL Server 5.5/bin</li><li>Download RMySQL: http://cran.r-project.org/web/packages/RMySQL/index.html</li><li>From command line (windows CMD, not MSys or cygwin, as it might use different gcc other than the one from RTools), run "R CMD INSTALL RMySQL_0.9-3.tar.gz"</li></ol>

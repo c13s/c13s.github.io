@@ -1,0 +1,44 @@
+---
+layout: post
+title: FBA in context of absolute gene expression data
+categories:
+- Bioinformatics
+- Paper Summary
+tags:
+- FBA
+- Metabolic Network
+status: publish
+type: post
+published: true
+meta:
+  _elasticsearch_indexed_on: '2012-06-22 20:57:00'
+---
+<p>Flux balance analysis (FBA) [1] is based on the stoichiometric constraints of the metabolic reaction network, and estimates the reaction fluxes by maximizing an biological objective function, such as the biomass production. However, such biological objectives are not always valid, since cells are not always in pursuit of maximizing its own growth, especially for cells in multicellular organisms. In a recent paper published on BMC Systems Biology, Lee et. al. tries to integrate absolute gene expression into the metabolic flux prediction, and improved the predictions of experimentally measured fluxes [2]. 
+
+If we recall, FBA is formulated as such:
+$latex
+\max_{\mathbf{v}}{Z} \\
+s.t. \\
+Z = \mathbf{c}^T \cdot \mathbf{v} \\
+\mathbf{S\cdot v = 0} \\
+\mathbf{v_l} &lt; \mathbf{v} &lt; \mathbf{v_u}
+$
+where $latex \mathbf{S}$ is the stoichiometric matrix based on the constructed metabolic network, and $latex \mathbf{v} $ is the flux vector. $latex \mathbf{v_l} $ and $latex \mathbf{v_u} $ are the lower bounds and upper bounds of the fluxes. $latex Z = \mathbf{c}^T \cdot \mathbf{v} $ defines the objective function. 
+
+The improved FBA model proposed in the Lee paper takes the absolute gene expression (measured by RNA-seq) into account. Instead of maximizing a biological objective function, they tries to maximizing the correlation between the predicted flux and the absolute gene expression measurement. In the revised model, the objective function is to minimize:
+$latex
+Z = \sum_i{\frac{1}{\sigma_i}\left| v_i-d_i \right|}
+$
+where $latex v_i$ is the flux of reaction i, and $latex d_i $ is the reaction data by mapping the gene expression data to reaction i. $latex \sigma_i $ is the error in data point i as calculated in the gene-protein-reaction mapping process. Basically, $latex Z$ is the weighted sum according to the confidence in the estimate of the reaction data from gene expression data. 
+
+The authors showed that their method outperforms FBA and gene expression data based FBA extensions (GIMME [3] and iMAT [4]). 
+
+References: 
+
+1. Orth, J.D., Thiele, I. &amp; Palsson, B.\O. (2010). What is flux balance analysis?. Nature biotechnology, 28, 245-248.
+
+2. Lee, D., Smallbone, K., Dunn, W.B., Murabito, E., Winder, C.L., Kell, D.B., Mendes, P. &amp; Swainston, N. (2012). Improving metabolic flux predictions using absolute gene expression data. BMC Systems Biology, 6, 73.
+
+3. Shlomi, T., Cabili, M.N., Herrg\aard, M.J., Palsson, B.\O. &amp; Ruppin, E. (2008). Network-based prediction of human tissue-specific metabolism. Nature biotechnology, 26, 1003-1010.
+
+4. Becker, S.A. &amp; Palsson, B.O. (2008). Context-specific metabolic networks are consistent with experiments. PLoS computational biology, 4, e1000082.</p>

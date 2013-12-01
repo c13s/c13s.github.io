@@ -1,0 +1,57 @@
+---
+layout: post
+title: Import tabular data into a new Cytoscape 3 CyTable
+categories:
+- Programming
+tags:
+- cytoscape
+status: publish
+type: post
+published: true
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";s:1:"0";s:6:"author";s:7:"4343193";s:7:"blog_id";s:7:"6714149";s:9:"mod_stamp";s:19:"2012-06-21
+    16:28:55";}
+  _elasticsearch_indexed_on: '2012-06-21 16:18:32'
+---
+For a Cy3 app to import tabular data, there are several options. Data can be imported into the default table, which is the same as the old fashion in cy2.x. A nice feature in cy3 is that it supports an arbitrary number of tables, and except for the default table, the tables don't have to have nodes or edges as their keys - it makes sense to use them as keys though.
+
+Here is how to create a new table with the tabular data:
+
+1. The CyActivator needs to pass a few useful CyTable related services to the App class.
+
+[sourcecode language="java"]
+public class CyActivator extends AbstractCyActivator {
+    @Override
+    public void start(BundleContext bc) throws Exception {
+        ...
+        CyApplicationManager manager = getService(bc,CyApplicationManager.class);
+        CyTableFactory tableFactory = getService(bc, CyTableFactory.class);
+        CyTableManager tableManager = getService(bc,CyTableManager.class);
+        MyApp app = new MyApp(..., tableFactory, tableManager);
+        ...
+    }
+}
+[/sourcecode]
+
+2. In the app class, use CyTableFactory to create a table, adding your data, and then add the table to Cy3 using CyTableManager.
+
+[sourcecode language="java"]
+public class MyApp {
+    private CyTableFactory tableFactory;
+    private CyTableManager tableManager;
+    public MyApp(..., CyTableFactory tableFactory, CyTableManager tableManager) {
+        this.tableFactory = tableFactory;
+        this.tableManager = tableManager;
+    }
+    public void createTable(...) {
+        ...
+        CyTable table = tableFactory.createTable(...);
+        // populate your table. See http://wiki.cytoscape.org/Cytoscape_3/AppDeveloper/Cytoscape_3_App_Cookbook#How_to_load_attribute_data.3F
+        ...
+
+        tableManager.addTable(table);
+    }
+}
+[/sourcecode]
+
+A nicer way is to encapsulate the table creation in a Task. Cy3 has a few classes in org.cytoscape.task.edit that can serve as good examples of using Tasks with CyTable creation and data import. 

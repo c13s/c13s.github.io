@@ -1,0 +1,15 @@
+---
+layout: post
+title: Fibonacci numbers (Recoginizing patterns from data)
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '277810778331042759'
+  _elasticsearch_indexed_on: '2008-11-10 18:08:00'
+---
+If looking at this picture, what do you see? A plant?<img src="http://britton.disted.camosun.bc.ca/fibslide/fib09sm.gif" alt="" border="0" height="143" width="240" /><a href="http://britton.disted.camosun.bc.ca/fibslide/jbfibslide.htm">Picture from reference 1</a>How about now? A tree with number of branches in the same level:  1, 2, 3, 5, 8, 13 ....<img src="http://britton.disted.camosun.bc.ca/fibslide/fib11sm.gif" alt="" border="0" height="143" width="240" /><a href="http://britton.disted.camosun.bc.ca/fibslide/jbfibslide.htm">Picture from reference 1</a>Those are Fibonacci numbers.Can we model it differently? How about a tree structure<sup>2</sup>?<pre><br />          b<br />          |<br />          a<br />         _|_<br />        a   b<br />       _|    \<br />      a b     a<br />     _| |     |_<br />    a b a     a b<br />   _| | |_    |_ \<br />  a b a a b   a b a<br /></pre>Or, more precisely, a model described by the following<sup>2</sup>:<pre><br />Initial State: b<br />b -&gt; a<br />a-&gt; ab<br /></pre>At what level did we exactly subtract knowledge? I think the picture is our data; and the numbers, or the tree are information; when we built the model, or when we know that the numbers are Fibonacci numbers, that's when we subtracted knowledge - "the number of branches in any stage of the sneezewort plant growth is a Fibonacci number, and can be represented by such a model... However, even when we built the model, we might still not know that this model will generate a Fibonacci number. That, as I understand, shows that knowledge have different levels - as we might think, the Fibonacci numbers may represents something we haven't found out, or there are some patterns hidden in this number, similar to we saw in the movie <a href="http://pithemovie.com">Pi</a>. <a href="http://pithemovie.com"><img src="http://www.pithemovie.com/fadein.gif" /></a>By the way, the plants does exist in nature, it's called <em><span style="color:rgb(255,0,0);">sneezewort</span></em>Reference:1. Fibonacci Numbers in Nature. at <a href="http://britton.disted.camosun.bc.ca/fibslide/jbfibslide.htm">http://britton.disted.camosun.bc.ca/fibslide/jbfibslide.htm</a>2. i501_lecture7_slides.pdf. at <a href="http://www.informatics.indiana.edu/rocha/i501/pdfs/i501_lecture7_slides.pdf">http://www.informatics.indiana.edu/rocha/i501/pdfs/i501_lecture7_slides.pdf</a>

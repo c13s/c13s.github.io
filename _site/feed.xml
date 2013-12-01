@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>C-13-S</title>
+		<description>Discovering Structures in the Unstructured World</description>
+		<link>/</link>
+		<atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>The great tree of life</title>
+				<description>&lt;a href=&quot;http://visual.ly/great-tree-life&quot;&gt;&lt;img src=&quot;http://c13s.files.wordpress.com/2013/02/the-great-tree-of-life_505ba0c07cda2_w1177.png&quot; class=&quot;size-full&quot; alt=&quot;The great tree of life&quot; /&gt;&lt;/a&gt;
+
+&lt;p&gt;A wonderful visualization of the tree of life&lt;/p&gt;
+</description>
+				<pubDate>Tue, 12 Feb 2013 00:00:00 -0500</pubDate>
+				<link>/bioinformatics/fun/2013/02/12/the-great-tree-of-life.html</link>
+				<guid isPermaLink="true">/bioinformatics/fun/2013/02/12/the-great-tree-of-life.html</guid>
+			</item>
+		
+			<item>
+				<title>A lightweight JavaCC Newick parser</title>
+				<description>I could not easily find a lightweight &lt;a href=&quot;http://en.wikipedia.org/wiki/Newick_format&quot;&gt;Newick&lt;/a&gt; parser written in Java. Newick parsers included in bioinformatics tools seem to parse into some customized complicated tree structure, so I decide to spend a few hours to write one myself.
+
+With JavaCC, the parser is just a few lines of code. It builds a very simple tree structure which could be easily converted to any more complex tree structure.
+
+A binary jar file is here: &lt;a href=&quot;https://bitbucket.org/djiao/a-lightweight-javacc-newick-parser/downloads/newick-1.0-SNAPSHOT.jar&quot;&gt;https://bitbucket.org/djiao/a-lightweight-javacc-newick-parser/downloads/newick-1.0-SNAPSHOT.jar&lt;/a&gt;. I tested it with a newick file (downloaded from &lt;a href=&quot;http://users-birc.au.dk/zxr/phyloprof/taxomonicTreeNCBI_bin.nwk&quot;&gt;http://users-birc.au.dk/zxr/phyloprof/taxomonicTreeNCBI_bin.nwk&lt;/a&gt;) and it worked pretty well. To run it, simply do
+&lt;code&gt;
+&amp;gt; cat taxomonicTreeNCBI_bin.nwk | java -cp newick-1.0-SNAPSHOT.jar newick.NewickParser
+&lt;/code&gt;
+
+Sources are here: &lt;a href=&quot;https://bitbucket.org/djiao/a-lightweight-javacc-newick-parser/src&quot;&gt;https://bitbucket.org/djiao/a-lightweight-javacc-newick-parser/src &lt;/a&gt;
+</description>
+				<pubDate>Thu, 07 Feb 2013 00:00:00 -0500</pubDate>
+				<link>/bioinformatics/programming/2013/02/07/a-lightweight-javacc-newick-parser.html</link>
+				<guid isPermaLink="true">/bioinformatics/programming/2013/02/07/a-lightweight-javacc-newick-parser.html</guid>
+			</item>
+		
+			<item>
+				<title>List of COGs (another example of how powerful SED is)</title>
+				<description>To get a table of &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/COG/&quot; title=&quot;COG&quot; target=&quot;_blank&quot;&gt;COGs&lt;/a&gt; (Clusters of Orthologous Groups) with their category code and name, a one liner sed command can do the job:
+
+&lt;code&gt;
+&amp;gt; wget ftp://ftp.ncbi.nih.gov/pub/COG/COG/whog
+&amp;gt; sed -n &#39;s/\[\(.*\)\] \(COG[0-9]*\) \(.*\)/\1\t\2\t\3/p&#39; whog &amp;gt; cog.tab
+&lt;/code&gt;
+
+Download the table: &lt;a href=&quot;https://www.box.com/s/fzrtcq21r39cgmu26veo&quot; title=&quot;cog.tab&quot; target=&quot;_blank&quot;&gt;cog.tab&lt;/a&gt;
+
+</description>
+				<pubDate>Wed, 23 Jan 2013 00:00:00 -0500</pubDate>
+				<link>/bioinformatics/programming/2013/01/23/list-of-cogs-another-example-of-how-powerful-sed-is.html</link>
+				<guid isPermaLink="true">/bioinformatics/programming/2013/01/23/list-of-cogs-another-example-of-how-powerful-sed-is.html</guid>
+			</item>
+		
+			<item>
+				<title>KEGG organism code to NCBI taxonomy id mapping</title>
+				<description>KEGG organisms are assigned 3 letter codes, e.g., &quot;hsa&quot; for homo sapiens. To map these codes to the NCBI taxonomy ID, a one-liner sed command is sufficient:
+
+First download by copy n&#39; paste from &lt;a href=&quot;http://www.genome.jp/kegg-bin/get_htext?query=&amp;amp;htext=Organisms&amp;amp;filedir=&amp;amp;option=-e&amp;amp;extend=F65F548C25-2E42-3&amp;amp;uploadfile=&amp;amp;format=&amp;amp;wrap=&amp;amp;length=&amp;amp;open=&amp;amp;close=&amp;amp;hier=18&amp;amp;oneclick=on&quot;&gt;the KEGG taxonomy page&lt;/a&gt;:
+
+Save it to a text file &lt;a href=&quot;https://www.box.com/s/hsmvie7vgjdj1z3g0iuf&quot;&gt;kegg_taxonomy.txt&lt;/a&gt;
+
+Then sed:
+
+[sourcecode]
+sed -n &#39;s/.*\[TAX\:\([0-9]*\)\] \[GN\:\([a-z]\{3\}\)\].*/\2 \1/p&#39; kegg_taxonomy.txt &amp;gt; kegg2taxonomy.txt
+[/sourcecode]
+
+Download &lt;a href=&quot;https://www.box.com/s/6jfb8a4kyphgsxrlj4e5&quot;&gt;kegg2taxonomy.txt&lt;/a&gt;
+</description>
+				<pubDate>Tue, 04 Dec 2012 00:00:00 -0500</pubDate>
+				<link>/bioinformatics/programming/2012/12/04/kegg-organism-code-to-ncbi-taxonomy-id-mapping.html</link>
+				<guid isPermaLink="true">/bioinformatics/programming/2012/12/04/kegg-organism-code-to-ncbi-taxonomy-id-mapping.html</guid>
+			</item>
+		
+			<item>
+				<title>Install RMySQL on Windows 7 (64bit)</title>
+				<description>&lt;p&gt;RMySQL 0.9.3; MySQL 5.5.28; R 2.15.1; RTools: 2.15; Windows 7 64bit&lt;/p&gt;&lt;p&gt;This might not be as hard as it sounds but I did spend a couple of hours on installing RMySQL. Here are the steps&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Install RTools if you haven&#39;t done it. Add &quot;C:\Rtools\bin;C:\Rtools\gcc-4.6.3\bin&quot; in your path (Environement Variables in System Advanced Settings)&lt;/li&gt;&lt;li&gt;Add &quot;MYSQL_HOME=C:/Program Files/MySQL/MySQL Server 5.5&quot; in Environment Variables. &lt;/li&gt;&lt;li&gt;Copy libmysql.dll from C:/Program Files/MySQL/MySQL Server 5.5/lib to C:/Program Files/MySQL/MySQL Server 5.5/bin&lt;/li&gt;&lt;li&gt;Download RMySQL: http://cran.r-project.org/web/packages/RMySQL/index.html&lt;/li&gt;&lt;li&gt;From command line (windows CMD, not MSys or cygwin, as it might use different gcc other than the one from RTools), run &quot;R CMD INSTALL RMySQL_0.9-3.tar.gz&quot;&lt;/li&gt;&lt;/ol&gt;
+</description>
+				<pubDate>Tue, 27 Nov 2012 00:00:00 -0500</pubDate>
+				<link>/programming/2012/11/27/install-rmysql-on-windows-7-64bit.html</link>
+				<guid isPermaLink="true">/programming/2012/11/27/install-rmysql-on-windows-7-64bit.html</guid>
+			</item>
+		
+			<item>
+				<title>FBA in context of absolute gene expression data</title>
+				<description>&lt;p&gt;Flux balance analysis (FBA) [1] is based on the stoichiometric constraints of the metabolic reaction network, and estimates the reaction fluxes by maximizing an biological objective function, such as the biomass production. However, such biological objectives are not always valid, since cells are not always in pursuit of maximizing its own growth, especially for cells in multicellular organisms. In a recent paper published on BMC Systems Biology, Lee et. al. tries to integrate absolute gene expression into the metabolic flux prediction, and improved the predictions of experimentally measured fluxes [2]. 
+
+If we recall, FBA is formulated as such:
+$latex
+\max_{\mathbf{v}}{Z} \\
+s.t. \\
+Z = \mathbf{c}^T \cdot \mathbf{v} \\
+\mathbf{S\cdot v = 0} \\
+\mathbf{v_l} &amp;lt; \mathbf{v} &amp;lt; \mathbf{v_u}
+$
+where $latex \mathbf{S}$ is the stoichiometric matrix based on the constructed metabolic network, and $latex \mathbf{v} $ is the flux vector. $latex \mathbf{v_l} $ and $latex \mathbf{v_u} $ are the lower bounds and upper bounds of the fluxes. $latex Z = \mathbf{c}^T \cdot \mathbf{v} $ defines the objective function. 
+
+The improved FBA model proposed in the Lee paper takes the absolute gene expression (measured by RNA-seq) into account. Instead of maximizing a biological objective function, they tries to maximizing the correlation between the predicted flux and the absolute gene expression measurement. In the revised model, the objective function is to minimize:
+$latex
+Z = \sum_i{\frac{1}{\sigma_i}\left| v_i-d_i \right|}
+$
+where $latex v_i$ is the flux of reaction i, and $latex d_i $ is the reaction data by mapping the gene expression data to reaction i. $latex \sigma_i $ is the error in data point i as calculated in the gene-protein-reaction mapping process. Basically, $latex Z$ is the weighted sum according to the confidence in the estimate of the reaction data from gene expression data. 
+
+The authors showed that their method outperforms FBA and gene expression data based FBA extensions (GIMME [3] and iMAT [4]). 
+
+References: 
+
+1. Orth, J.D., Thiele, I. &amp;amp; Palsson, B.\O. (2010). What is flux balance analysis?. Nature biotechnology, 28, 245-248.
+
+2. Lee, D., Smallbone, K., Dunn, W.B., Murabito, E., Winder, C.L., Kell, D.B., Mendes, P. &amp;amp; Swainston, N. (2012). Improving metabolic flux predictions using absolute gene expression data. BMC Systems Biology, 6, 73.
+
+3. Shlomi, T., Cabili, M.N., Herrg\aard, M.J., Palsson, B.\O. &amp;amp; Ruppin, E. (2008). Network-based prediction of human tissue-specific metabolism. Nature biotechnology, 26, 1003-1010.
+
+4. Becker, S.A. &amp;amp; Palsson, B.O. (2008). Context-specific metabolic networks are consistent with experiments. PLoS computational biology, 4, e1000082.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 22 Jun 2012 00:00:00 -0400</pubDate>
+				<link>/bioinformatics/paper%20summary/2012/06/22/fba-in-context-of-absolute-gene-expression-data.html</link>
+				<guid isPermaLink="true">/bioinformatics/paper%20summary/2012/06/22/fba-in-context-of-absolute-gene-expression-data.html</guid>
+			</item>
+		
+			<item>
+				<title>Import tabular data into a new Cytoscape 3 CyTable</title>
+				<description>For a Cy3 app to import tabular data, there are several options. Data can be imported into the default table, which is the same as the old fashion in cy2.x. A nice feature in cy3 is that it supports an arbitrary number of tables, and except for the default table, the tables don&#39;t have to have nodes or edges as their keys - it makes sense to use them as keys though.
+
+Here is how to create a new table with the tabular data:
+
+1. The CyActivator needs to pass a few useful CyTable related services to the App class.
+
+[sourcecode language=&quot;java&quot;]
+public class CyActivator extends AbstractCyActivator {
+    @Override
+    public void start(BundleContext bc) throws Exception {
+        ...
+        CyApplicationManager manager = getService(bc,CyApplicationManager.class);
+        CyTableFactory tableFactory = getService(bc, CyTableFactory.class);
+        CyTableManager tableManager = getService(bc,CyTableManager.class);
+        MyApp app = new MyApp(..., tableFactory, tableManager);
+        ...
+    }
+}
+[/sourcecode]
+
+2. In the app class, use CyTableFactory to create a table, adding your data, and then add the table to Cy3 using CyTableManager.
+
+[sourcecode language=&quot;java&quot;]
+public class MyApp {
+    private CyTableFactory tableFactory;
+    private CyTableManager tableManager;
+    public MyApp(..., CyTableFactory tableFactory, CyTableManager tableManager) {
+        this.tableFactory = tableFactory;
+        this.tableManager = tableManager;
+    }
+    public void createTable(...) {
+        ...
+        CyTable table = tableFactory.createTable(...);
+        // populate your table. See http://wiki.cytoscape.org/Cytoscape_3/AppDeveloper/Cytoscape_3_App_Cookbook#How_to_load_attribute_data.3F
+        ...
+
+        tableManager.addTable(table);
+    }
+}
+[/sourcecode]
+
+A nicer way is to encapsulate the table creation in a Task. Cy3 has a few classes in org.cytoscape.task.edit that can serve as good examples of using Tasks with CyTable creation and data import. 
+</description>
+				<pubDate>Thu, 21 Jun 2012 00:00:00 -0400</pubDate>
+				<link>/programming/2012/06/21/import-tabular-data-into-a-new-cytoscape-3-cytable.html</link>
+				<guid isPermaLink="true">/programming/2012/06/21/import-tabular-data-into-a-new-cytoscape-3-cytable.html</guid>
+			</item>
+		
+			<item>
+				<title>06/04/12 PHD comic: Working</title>
+				<description>&lt;img src=&quot;http://www.phdcomics.com/comics/archive/phd060412s.gif&quot; alt=&quot;&quot; /&gt;
+
+PHD Comics
+
+via &lt;a href=&quot;http://www.phdcomics.com/comics.php?f=1501&quot;&gt;06/04/12 PHD comic: Working&lt;/a&gt;.
+</description>
+				<pubDate>Fri, 08 Jun 2012 00:00:00 -0400</pubDate>
+				<link>/fun/2012/06/08/060412-phd-comic-working.html</link>
+				<guid isPermaLink="true">/fun/2012/06/08/060412-phd-comic-working.html</guid>
+			</item>
+		
+			<item>
+				<title>Set up an app project in Eclipse for Cytoscape 3</title>
+				<description>The new Cytoscape 3 is based on OSGI, which I barely know anything about. Even though Cytoscape 3 is still in beta, manuals, wikies and tutorials have been flowing around in the web, which could be overwhelming if you want to create a new C3 compatible bundle app. Today I tried to set up an Cytoscape 3 bundle App (aka Plugin in the Cytoscape 2.x world) development environment in Eclipse. To my surprise, it is without any hassle by following a tutorial and a wiki page.
+
+First, by following this tutorial: &lt;a href=&quot;http://opentutorials.cgl.ucsf.edu/index.php/Tutorial:Create_a_Bundle_App_Using_IDE&quot;&gt;Create a Bundle App Using IDE&lt;/a&gt; , it&#39;s really straightforward to create the app with Maven and Eclipse (M2Eclipse is required). After everything is set up, I made sure that the app was installed by running &quot;mvn install&quot; (either in the app directory from command line or within eclipse) and checked my local maven repository ~/.m2/repository/group&lt;em&gt;id/architect&lt;/em&gt;id (yes I am using Linux).
+
+Then I followed this wiki page: &lt;a href=&quot;http://wiki.cytoscape.org/Cytoscape_3/Interactive_Shell&quot;&gt;Interactive Shell&lt;/a&gt; , and deployed the app and tested it.
+
+First download cytoscape 3:
+
+[sourcecode]
+&amp;gt; wget http://chianti.ucsd.edu/cytoscape-3.0.0-M4/cytoscape-unix-3.0.0-M4.tar.gz
+&amp;gt; tar xzf cytoscape-unix-3.0.0-M4.tar.gz
+&amp;gt; cd cytoscape-unix-3.0.0-M4
+&amp;gt; ./cytoscape.sh # this will start cytoscape shell and the GUI
+Cytoscape 3.0.0-M4&amp;gt; install mvn:groupid/artifactid
+Bundle ID: 162
+Cytoscape 3.0.0-M4&amp;gt; start 162
+[/sourcecode]
+
+Now go to the Cytoscape GUI, and open Apps menu, and there it is: &quot;Hello World!&quot;
+
+&lt;img src=&quot;http://c13s.files.wordpress.com/2012/05/cytoscape-helloworld.png&quot; alt=&quot;cytoscape hello world plugin after deployment&quot; width=&quot;650&quot; height=&quot;425&quot; /&gt;
+</description>
+				<pubDate>Fri, 18 May 2012 00:00:00 -0400</pubDate>
+				<link>/programming/2012/05/18/set-up-an-app-project-in-eclipse-for-cytoscape-3.html</link>
+				<guid isPermaLink="true">/programming/2012/05/18/set-up-an-app-project-in-eclipse-for-cytoscape-3.html</guid>
+			</item>
+		
+			<item>
+				<title>Summary:  Flux Variability Analysis of Metabolic Networks in Purple Nonsulfur Bacteria</title>
+				<description>&lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmed/21943387&quot;&gt;Hadicke &lt;em&gt;et al&lt;/em&gt; published a research paper in BMC Systems Biology&lt;/a&gt;. The group modeled metabolic networks of purple nonsulfur bacteria (PNSB) using flux variability analysis (FVA). FVA is slightly different to flux balance analysis (FBA) in that in the former, the biological objective is in its contraints, not the value to optimize.
+
+So FBA can be formulated as
+$latex max_{\mathbf{v}}\,\mathbf{Z=c^{T}\cdot v} \\
+s.t. \\
+\mbox{\textbf{S}\ensuremath{\cdot}\textbf{v}=\textbf{0}} \\
+\mathbf{v_{l}\leq v}\leq\mathbf{v_{u}}$
+
+where Z is the biological objective function, c is a vector of coefficients that define how much each reaction contribute to the objective. v is the vector of fluxes of each reaction, and it is unknown. S is a m*n matrix. It contains the stoichiometry of the metabolic networks. $latex \mathbf{v_{l}}$ and $latex \mathbf{v_{u}}$ are the lower bounds and upper bounds of $latex \textbf{v}$.
+
+Then FVA can be formulated as
+$latex min\/max_{\mathbf{v}}\,v_i \\
+s.t. \\
+\mbox{\textbf{S}\ensuremath{\cdot}\textbf{v}=\textbf{0}} \\
+\mathbf{Z=c^{T}\cdot v} \\
+\mathbf{v_{l}\leq v}\leq\mathbf{v_{u}}$
+
+Note that now $latex \mathbf{Z}$ is a known value. So this means that we already know the optimal of the biological objective, but we want to find out the range (min, max) of certain fluxes that fit the optimal solution. This gives the variability of $latex \mathbf{v}$. For example, in certain conditions, some reactions might changes but without changing the outcome. FVA analysis will be able to identify such reactions.
+
+This paper applied FVA to the analysis of the metabolic network in photosynthetic PNSB. The authors tested their model in several conditions. This paper is particularly interesting to me because of the methods FVA. The original paper of FVA is published in 2003. (&lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pubmed/14642354&quot;&gt;pubmed&lt;/a&gt;)
+</description>
+				<pubDate>Fri, 30 Sep 2011 00:00:00 -0400</pubDate>
+				<link>/bioinformatics/paper%20summary/2011/09/30/summary-flux-variability-analysis-of-metabolic-networks-in-purple-nonsulfur-bacteria.html</link>
+				<guid isPermaLink="true">/bioinformatics/paper%20summary/2011/09/30/summary-flux-variability-analysis-of-metabolic-networks-in-purple-nonsulfur-bacteria.html</guid>
+			</item>
+		
+	</channel>
+</rss>

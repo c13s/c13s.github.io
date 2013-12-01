@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Paper Summary: "Assessing How Well a Modeling Protocol Captures a Structure−Activity
+  Landscape"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '5182096605665076179'
+  _elasticsearch_indexed_on: '2008-10-13 21:49:00'
+---
+The Guha paper<sup>1</sup> introduced a new concept, SALI curve,  based on the <a href="http://c13s.com/?p=23">SALI paper</a> reviewed previously. First they explained that in real world drug discovery, a model to correctly predict the ordering of a pair of molecules is crucial, while the prediction of the actual potency value is not always necessary. Thus, in this paper, they focused on using SALI curve to analyze how well a model was able to predict the ordering of activities of molecules. A SALI curve is a plot of a function <i>S(X)</i>, which is a quantitative measure of the model's ability to predict edge directions correctly in a SALI graph with a threshold <i>X</i>. A value of S(X)=1.0 indicates a perfect prediction, -1.0 indicates a perfect misprediction, and 0.0 corresponds to random predictions. The author also introduced SCI (SALI curve integral), which can summarize the curve numerically. The value of S(0,0) represents the ability of the model to capture all SARs in the dataset, the value of S(1,0) represents the models ability to capture the most significant cliff. The authors found that the SALI curves correlated to the measurement based on RMSE and r<sup>2</sup> values when comparing two models on one dataset. Studying the SALI curves for 4 2D QSAR models and 2 3D QSAR models, the authors also showed that S(0,0) values of these models correctly indicated the quality of these models, but the S(1,0) values not always correlated to the measurements of RMSE, and they explained the behavior is caused by the presence of lots of pairs of stereoisomers with Tanimoto similarity being 1.0. The authors then discussed the behavior of SALI curves when performing Y randomization and adding noise to the dataset. They found that increasing noise was likely to drive the curves downward, and the change of the curve near X=1.0 was more sensitive to the noise. At last, the authors pointed out that the SALI method provided a framework for better understanding of what types of models better encode a SAR and what aspects of SAR they encode. It can be used a basis for applicability domain analysis, and as indiciation of model overfitting or experiment errors. 1. Guha R, Van Drie JH. Assessing How Well a Modeling Protocol Captures a Structure−Activity Landscape. J. Chem. Inf. Model. 2008 Aug 25;48(8):1716-1728.

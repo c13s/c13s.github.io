@@ -1,0 +1,52 @@
+---
+layout: post
+title: 'igraph example: edge-labeled graph or weighted graph'
+categories:
+- Programming
+tags:
+- R
+status: publish
+type: post
+published: true
+meta:
+  _wp_old_slug: ''
+  _elasticsearch_indexed_on: '2010-07-23 16:38:08'
+---
+Here is an example of how to create a edge-labeled graph using <a href="http://igraph.sourceforge.net/">igraph</a>.
+[sourcecode]
+&gt; a  
+a
+[,1] [,2] [,3]
+[1,] 0 2 1
+[2,] 2 0 3
+[3,] 1 3 0
+&gt; g1  
+g1
+Vertices: 3
+Edges: 6
+Directed: TRUE
+Edges:
+
+[0] 0 -&gt; 1
+[1] 0 -&gt; 2
+[2] 1 -&gt; 0
+[3] 1 -&gt; 2
+[4] 2 -&gt; 0
+[5] 2 -&gt; 1
+&gt; E(g1)$weight
+[1] 2 1 2 3 1 3
+&gt; E(g1)
+Edge sequence:
+
+[0] 0 -&gt; 1
+[1] 0 -&gt; 2
+[2] 1 -&gt; 0
+[3] 1 -&gt; 2
+[4] 2 -&gt; 0
+[5] 2 -&gt; 1
+&gt; get.adjacency(g1, attr=&quot;weight&quot;)
+[,1] [,2] [,3]
+[1,] 0 2 1
+[2,] 2 0 3
+[3,] 1 3 0
+[/sourcecode]

@@ -1,0 +1,26 @@
+---
+layout: post
+title: Drug Mode of Action and repositioning from gene expression data
+categories:
+- Cheminformatics
+- Paper Summary
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _elasticsearch_indexed_on: '2010-09-13 19:17:59'
+---
+Iorio, F. et al published a paper in the PNAS journal. They built a drug network out of gene expression data from small molecule screens. Using network analysis tools, they were able to group drugs into communities using network analysis. They claim that the compounds in the same community tend to have similar MoA, or act on similar biological pathways. They correctly predicted nine anticancer compounds and discovered an unreported effect for an existing drug.
+
+There are several interesting things in their work. First, they developed a new algorithm to merge the gene expression data from different cell lines given the same compound. This aggregation algorithm uses several techniques such as Spearman's footrule, Borda Merging Method and the Kruskal Algorithm.
+
+Secondly, they calculated the drug similarity based on the merged list of gene ranks from the previous step based on results from Gene Set Enrichment Analysis (GSEA). This is because the list of expressions are different for two different compounds.
+
+Thirdly, they compared the drug similarity measure with chemical similarity measures using fingerprints or electrotopological descriptors. The results are quite uncorralted with very low pearson correlation coefficient. An interesting extension of this could be the activity cliffs - very similar compounds that having completely different biological activity profile.
+
+One limitation of this method is that you need to have a gene expression profile of a compound to be able to use it, similar to the original connectivity map approach. The other concern is that for compounds that have inconsistent effects on different cell lines. But as the authors mentioned, "when no information on the drug MoA is available a priori, the best strategy is still
+to merge profiles from multiple cell lines".
+
+Iorio, F. et al. Discovery of drug mode of action and drug repositioning from transcriptional responses. <span style="font-style:italic;">Proceedings of the National Academy of Sciences</span> <span style="font-weight:bold;">107</span>, 14621 -14626 (2010). <span class="slug-metadata-note ahead-of-print">doi:<span class="slug-doi" title="10.1073/pnas.1000138107">10.1073/pnas.1000138107
+</span></span>

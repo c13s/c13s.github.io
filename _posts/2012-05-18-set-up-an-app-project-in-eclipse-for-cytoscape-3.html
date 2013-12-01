@@ -1,0 +1,37 @@
+---
+layout: post
+title: Set up an app project in Eclipse for Cytoscape 3
+categories:
+- Programming
+tags:
+- cytoscape
+- gsoc
+status: publish
+type: post
+published: true
+meta:
+  tagazine-media: a:7:{s:7:"primary";s:64:"http://c13s.files.wordpress.com/2012/05/cytoscape-helloworld.png";s:6:"images";a:1:{s:64:"http://c13s.files.wordpress.com/2012/05/cytoscape-helloworld.png";a:6:{s:8:"file_url";s:64:"http://c13s.files.wordpress.com/2012/05/cytoscape-helloworld.png";s:5:"width";s:3:"696";s:6:"height";s:3:"536";s:4:"type";s:5:"image";s:4:"area";s:6:"373056";s:9:"file_path";s:0:"";}}s:6:"videos";a:0:{}s:11:"image_count";s:1:"1";s:6:"author";s:7:"4343193";s:7:"blog_id";s:7:"6714149";s:9:"mod_stamp";s:19:"2012-05-18
+    16:20:36";}
+  _elasticsearch_indexed_on: '2012-05-18 16:01:00'
+---
+The new Cytoscape 3 is based on OSGI, which I barely know anything about. Even though Cytoscape 3 is still in beta, manuals, wikies and tutorials have been flowing around in the web, which could be overwhelming if you want to create a new C3 compatible bundle app. Today I tried to set up an Cytoscape 3 bundle App (aka Plugin in the Cytoscape 2.x world) development environment in Eclipse. To my surprise, it is without any hassle by following a tutorial and a wiki page.
+
+First, by following this tutorial: <a href="http://opentutorials.cgl.ucsf.edu/index.php/Tutorial:Create_a_Bundle_App_Using_IDE">Create a Bundle App Using IDE</a> , it's really straightforward to create the app with Maven and Eclipse (M2Eclipse is required). After everything is set up, I made sure that the app was installed by running "mvn install" (either in the app directory from command line or within eclipse) and checked my local maven repository ~/.m2/repository/group<em>id/architect</em>id (yes I am using Linux).
+
+Then I followed this wiki page: <a href="http://wiki.cytoscape.org/Cytoscape_3/Interactive_Shell">Interactive Shell</a> , and deployed the app and tested it.
+
+First download cytoscape 3:
+
+[sourcecode]
+&gt; wget http://chianti.ucsd.edu/cytoscape-3.0.0-M4/cytoscape-unix-3.0.0-M4.tar.gz
+&gt; tar xzf cytoscape-unix-3.0.0-M4.tar.gz
+&gt; cd cytoscape-unix-3.0.0-M4
+&gt; ./cytoscape.sh # this will start cytoscape shell and the GUI
+Cytoscape 3.0.0-M4&gt; install mvn:groupid/artifactid
+Bundle ID: 162
+Cytoscape 3.0.0-M4&gt; start 162
+[/sourcecode]
+
+Now go to the Cytoscape GUI, and open Apps menu, and there it is: "Hello World!"
+
+<img src="http://c13s.files.wordpress.com/2012/05/cytoscape-helloworld.png" alt="cytoscape hello world plugin after deployment" width="650" height="425" />

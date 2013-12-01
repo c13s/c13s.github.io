@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Paper Summary: "Structure-Activity Landscape Index: Identifying and Quantifying
+  Activity Cliffs"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '3503039611303567614'
+  _elasticsearch_indexed_on: '2008-10-13 20:26:00'
+---
+The Guha paper<sup>1</sup> proposed a approach using structure-activity landscape index (SALI) to quantitatively identifying and analyzing the activity cliffs in the activity landscape. SALI is defined by the following:<div align="center">SALI<sub><i>i,j</i></sub> = | A<sub><i>i</i></sub> - A<sub><i>j</i></sub> | / (1 - sim(<i>i,j</i>) )</div>where A<sub><i>i</i></sub>, A<sub><i>j</i></sub> are the activities of the <i>i</i>th and <i>j</i>th molecules. The authors used the SALI values to generate a graph, where each node represents a molecule, and an edge is added between a pair of nodes if the SALI value is over a cutoff value. The SALI graph is directed, and an edge is pointed from the node with a higher activity to the node with a lower activity. The authors also proposed a different way of visualizing and analyzing SAR with SALI - plotting a heatmap of the values, but the discussion and findings are focused on the network based representation.The authors used the SALI network to analyze several SAR models. They showed that lots of SAR characteristics, including activity cliffs, could be identified when changing the cutoff values to generate different resolution of the SALI networks. For example, when changing the value from a larger cutoff value to a smaller value, a broad SAR can be dissected into a set of "smaller" and more detailed SAR components. The author also showed that when the cutoff value is big, only the most significant activity cliffs remain in the SALI network, and by comparing nodes that appear in a SALI network, the nonlinearity of SAR can be analyzed, and key component of SAR can be identified. The authors also performed different computational controls: the similarity metrics doesn't affect the ordering of the node pairs in the SALI graph, but smaller fingerprints will lead to a denser SALI network. The author suggested to use a histogram together with a SALI network to avoid the loss of resolution due to the presence of outliers, and to minimize the effect caused by experimental errors in the dataset. They also discussed future works such as use of activity differences to weight the edges in the network, and to use SALI network to predict the ordering of activities of molecules.  1. Guha R, VanDrie J. Structure-Activity Landscape Index: Identifying and Quantifying Activity Cliffs. J. Chem. Inf. Model. 2008 Mar 24;48(3):646-658.

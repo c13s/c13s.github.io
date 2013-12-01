@@ -1,0 +1,22 @@
+---
+layout: post
+title: 'Paper Summary: Generative Models for Chemical Structures'
+categories:
+- Cheminformatics
+- Machine Learning
+- Paper Summary
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  _elasticsearch_indexed_on: '2010-07-21 15:40:00'
+---
+Generative Models for Chemical Structures, David White, Richard C. Wilson. Journal of Chemical Information and Modeling Article ASAP
+
+An interesting paper published on JCIM. The authors created a GMM (<a class="zem_slink" title="Mixture model" rel="wikipedia" href="http://en.wikipedia.org/wiki/Mixture_model">Gaussian mixture model</a>) based on properties of active compounds over targets, and used the model to generate more molecules that are likely to be active. Each compound is represented based on properties extracted from a graph representation of it, and <a class="zem_slink" title="Principal component analysis" rel="wikipedia" href="http://en.wikipedia.org/wiki/Principal_component_analysis">PCA</a> conducted to reduce dimensionality. Then they sample from the built GMM, and map the samples back to a molecule.
+
+Testing this method on DUD data sets, they authors showed that molecules generated using this method are similar to the compounds in the input sets, and docking results show that the molecules are likely to be active against a target of the input molecules.
+
+<a href="http://pubs.acs.org/doi/full/10.1021/ci9004089">Generative Models for Chemical Structures - Journal of Chemical Information and Modeling (ACS Publications)</a>
+<div class="zemanta-pixie" style="margin-top:10px;height:15px;"><a class="zemanta-pixie-a" title="Enhanced by Zemanta" href="http://www.zemanta.com/"><img class="zemanta-pixie-img" style="border:medium none;float:right;" src="http://img.zemanta.com/zemified_e.png?x-id=7a2eaa9b-f00c-4d89-ae9a-0e001d05af82" alt="Enhanced by Zemanta" /></a></div>

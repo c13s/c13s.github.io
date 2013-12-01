@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Paper Summary: "Integrating high-content screening and ligand-target prediction
+  to identify mechanism of action"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '2306470899317729978'
+  _elasticsearch_indexed_on: '2008-11-04 22:46:00'
+---
+The Young paper<sup>1</sup> integrated high-content screening (HCS) predictions with similarity based prediction methods to investigate SARs. They first tried to solve the following problem: how to reduce the large size of data created by high content screening (HCS), and interpret the meanings of the measurements. The method they used is called factor analysis. It is based on the supposition that in a multivariate dataset, highly correlated variables are likely to be measuring a common trait, or "factor". They applied this method to high-content image data, created by an HCS assay to identify compounds that affect cell proliferation. The factor analysis reduced the 36 cytological features in the dataset to 6 factors, and each of them can be biologically interpreted. The authors also used these factors to create phenotypic profiles of the active ligands in the screen. The authors then compared results of clustering results based on the phenotype factors with clustering results based on structural similarities, and found the correlation between the two results statistically significant, and it indicates the molecular similarity principle can be applied to their phenotype compound profiling. The author then used the comparison to find activity cliffs. They compared Tanimoto similarities with phenotypic distances between each pair of compounds, and identified 4% of their active compound sets to be structurally similar but dissimilar in biological activities (activity cliffs). Then the authors discussed a few phenotypic SARs examples. They also compared the correlation between the phenotypic similarity matrix and the compound target similarity matrix, which was generated from on predictive models based on the WOMBAT database, and found that the correlation is twice statistically significant comparing to the correlation between the phenotypic similarity matrix with chemical structural similarity matrix. This shows the potential use of phenotypic measures to target predictions. 1. Young, D.W. et al. Integrating high-content screening and ligand-target prediction to identify mechanism of action. Nat Chem Biol 4, 59-68(2008).

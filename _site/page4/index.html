@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<! -- header.html -->
+<meta charset="utf-8">
+<title> C-13-S </title>
+
+<meta name="author" content="Dazhi Jiao">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+<!--[if lt IE 9]>
+ <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<!-- Le styles -->
+<link href="/assets/resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/assets/resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="/assets/resources/syntax/syntax.css" rel="stylesheet">
+<link href="/assets/css/style.css" rel="stylesheet">
+
+<!-- Le fav and touch icons -->
+<!-- Update these with your own images
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+-->
+
+ <link rel="alternate" type="application/rss+xml" title="" href="/feed.xml">
+
+<! -- header.html end -->
+
+
+   <body>
+   		<nav class="navbar navbar-default visible-xs" role="navigation">
+		  <!-- Brand and toggle get grouped for better mobile display -->
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			  <span class="sr-only">Toggle navigation</span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			  <span class="icon-bar"></span>
+			</button>
+			
+			<a type="button" class="navbar-toggle nav-link" href="http://github.com/jiaoda">
+		      <i class="fa fa-github"></i>
+		    </a>
+		    
+		    
+		    <a type="button" class="navbar-toggle nav-link" href="http://twitter.com/djiao">
+		      <i class="fa fa-twitter"></i>
+		    </a>
+		    
+		    
+		    <a type="button" class="navbar-toggle nav-link" href="mailto:dazhi.jiao@gmail.com">
+		      <i class="fa fa-envelope"></i>
+		    </a>
+		    
+			<a class="navbar-brand" href="/">
+				<img src="http://www.gravatar.com/avatar/3753f3aa8631c46c0e51525edf9bbbd7?s=35" class="img-circle" />
+				C-13-S
+			</a>
+		  </div>
+
+		  <!-- Collect the nav links, forms, and other content for toggling -->
+		  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+			  <li class="active"><a href="/">Home</a></li>
+			  <li><a href="/categories.html">Categories</a></li>
+  			  <li><a href="/tags.html">Tags</a></li>
+			</ul>
+		  </div><!-- /.navbar-collapse -->
+		</nav>
+
+		<div class="col-sm-3 sidebar hidden-xs">
+			<! -- sidebar.html -->
+<header class="sidebar-header" role="banner">
+	<a href="/">
+		<img src="http://www.gravatar.com/avatar/3753f3aa8631c46c0e51525edf9bbbd7?s=150" class="img-circle" />
+	</a>
+	<h3 class="title">
+        <a href="/">C-13-S</a>
+    </h3>
+</header>
+
+
+<div id="bio" class="text-center">
+	PhD Candidate in Informatics
+</div>
+
+
+<div id="contact-list" class="text-center">
+	<ul class="list-unstyled list-inline">
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://github.com/jiaoda">
+				<i class="fa fa-github-alt fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="https://twitter.com/djiao">
+				<i class="fa fa-twitter fa-lg"></i>
+			</a>
+		</li>
+		
+		
+		<li>
+			<a class="btn btn-default btn-sm" href="mailto:dazhi.jiao@gmail.com">
+				<i class="fa fa-envelope fa-lg"></i>
+			</a>
+		</li>
+		
+	</ul>
+	<ul id="contact-list-secondary" class="list-unstyled list-inline">
+		
+		
+		
+	</ul>
+</div>
+
+	
+
+<! -- sidebar.html end -->
+
+		</div>
+
+		<div class="col-sm-9 col-sm-offset-3">
+			<div class="page-header">
+  <h1> </h1>
+</div>
+
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                November
+                10th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/11/10/fibonacci-numbers-recoginizing-patterns-from-data-2.html">Fibonacci numbers (Recoginizing patterns from data)</a>
+            </h2>
+
+            <div>
+                
+                    
+                        If looking at this picture, what do you see? A plant?<img src="http://britton.disted.camosun.bc.ca/fibslide/fib09sm.gif" alt="" border="0" height="143" width="240" /><a href="http://britton.disted.camosun.bc.ca/fibslide/jbfibslide.htm">Picture from reference 1</a>How about now? A tree with number of branches in the same level:  1, 2, 3, 5, 8, 13 ....<img src="http://britton.disted.camosun.bc.ca/fibslide/fib11sm.gif" alt="" border="0" height="143" width="240" /><a href="http://britton.disted.camosun.bc.ca/fibslide/jbfibslide.htm">Picture from reference 1</a>Those are Fibonacci numbers.Can we model it differently? How about a tree structure<sup>2</sup>?<pre><br />          b<br />          |<br />          a<br />         _|_<br />        a   b<br />       _|    \<br />      a b     a<br />     _| |     |_<br />    a b a     a b<br />   _| | |_    |_ \<br />  a b a a b   a b a<br /></pre>Or, more precisely, a model described by the following<sup>2</sup>:<pre><br />Initial State: b<br />b -&gt; a<br />a-&gt; ab<br /></pre>At what level did we exactly subtract knowledge? I think the picture is our data; and the numbers, or the tree are information; when we built the model, or when we know that the numbers are Fibonacci numbers, that's when we subtracted knowledge - "the number of branches in any stage of the sneezewort plant growth is a Fibonacci number, and can be represented by such a model... However, even when we built the model, we might still not know that this model will generate a Fibonacci number. That, as I understand, shows that knowledge have different levels - as we might think, the Fibonacci numbers may represents something we haven't found out, or there are some patterns hidden in this number, similar to we saw in the movie <a href="http://pithemovie.com">Pi</a>. <a href="http://pithemovie.com"><img src="http://www.pithemovie.com/fadein.gif" /></a>By the way, the plants does exist in nature, it's called <em><span style="color:rgb(255,0,0);">sneezewort</span></em>Reference:1. Fibonacci Numbers in Nature. at <a href="http://britton.disted.camosun.bc.ca/fibslide/jbfibslide.htm">http://britton.disted.camosun.bc.ca/fibslide/jbfibslide.htm</a>2. i501_lecture7_slides.pdf. at <a href="http://www.informatics.indiana.edu/rocha/i501/pdfs/i501_lecture7_slides.pdf">http://www.informatics.indiana.edu/rocha/i501/pdfs/i501_lecture7_slides.pdf</a>
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                November
+                5th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/11/05/paper-summary-image-based-multivariate-profiling-of-drug-responses-from-single-cells-2.html">Paper Summary: "Image-based multivariate profiling of drug responses from single cells"</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Loo paper<sup>1</sup> presented an drug response profiling method that addresses three challenges in data analysis of high content screening (HCS): 1. transforming HCS measurements data to multivariate profiles that are interpretable; 2. feature selection and reduction; 3. how to determine dosage range and multiphasic drug response. In their approach, they uses a support vector machine (SVM) with linear kernal function to determine a hyperplane between treated and control distributions of measured data extracted from images. The unit vector and the hyperplanes are used as compound dosage profiles. Then they used an SVM recursive feature elimination (SVMRFE) algorithm to remove features that are redundant and less interpretable. Then they extracted dosage profile (d-profile) based on titration clustering, which can reveal that multiphasic drug effects. Finally they used the d-profiles in applications such as drug screening, phenotypic change detection and category prediction.
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                November
+                4th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/11/04/paper-summary-integrating-high-content-screening-and-ligand-target-prediction-to-identify-mechanism-of-action-2.html">Paper Summary: "Integrating high-content screening and ligand-target prediction to identify mechanism of action"</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Young paper<sup>1</sup> integrated high-content screening (HCS) predictions with similarity based prediction methods to investigate SARs. They first tried to solve the following problem: how to reduce the large size of data created by high content screening (HCS), and interpret the meanings of the measurements. The method they used is called factor analysis. It is based on the supposition that in a multivariate dataset, highly correlated variables are likely to be measuring a common trait, or "factor". They applied this method to high-content image data, created by an HCS assay to identify compounds that affect cell proliferation. The factor analysis reduced the 36 cytological features in the dataset to 6 factors, and each of them can be biologically interpreted. The authors also used these factors to create phenotypic profiles of the active ligands in the screen. The authors then compared results of clustering results based on the phenotype factors with clustering results based on structural similarities, and found the correlation between the two results statistically significant, and it indicates the molecular similarity principle can be applied to their phenotype compound profiling. The author then used the comparison to find activity cliffs. They compared Tanimoto similarities with phenotypic distances between each pair of compounds, and identified 4% of their active compound sets to be structurally similar but dissimilar in biological activities (activity cliffs). Then the authors discussed a few phenotypic SARs examples. They also compared the correlation between the phenotypic similarity matrix and the compound target similarity matrix, which was generated from on predictive models based on the WOMBAT database, and found that the correlation is twice statistically significant comparing to the correlation between the phenotypic similarity matrix with chemical structural similarity matrix. This shows the potential use of phenotypic measures to target predictions. 1. Young, D.W. et al. Integrating high-content screening and ligand-target prediction to identify mechanism of action. Nat Chem Biol 4, 59-68(2008).
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                November
+                4th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/11/04/paper-summary-image-based-chemical-screening-2.html">Paper Summary: "Image-based chemical screening"</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Carpenter paper<sup>1</sup> is a review of the overall methods and individual steps for conducting a high content screening(HCS). First the author briefly introduced the key concepts of visual assays and its development to HCS. In visual assays, cells are labeled flurescently and can be observed using a microscope of their phenotype changes. The recent development of automated microscopes and cell image analysis software have made visual assays to a large scale that is compatible with HTS. The author then discussed the following HCS components in detail: <br />1. Assay development: One goal of the assay development is to label protein with fluoreescent protein to probe the phenotype of interests. <br />2. Image acquisition and storage: The microscopy instruments have become increasingly automated, but attention needed for critical issues such as experiment environment control, image format. Image storage is another critical issue as a large image set could require TB spaces. The author listed a few image storage repository softwares and services in image screening centers as solutions to this issue. <br />3. Image analysis: this is required to extract quantitative measurements from images. The current available commercial software can process cell counting, protein expression, translocation and neurite outgrowth but the results can be less reliable in certain circumstances. Open-source software are also being developed to address these issues generically but it requires long term development. Finally the author pointed out that data quality, speed and flexibility, cost and ease of use are parameters to consider when choosing a image analysis software. <br />4. Data analysis ad exploration: The quantitative measurements can be used for statistical analysis. The study still need to address two major areas, how to correct biases in data caused by experiment variations, and how to select hits from the screen. Another issue needs to address is how to explore the data and discover the full spectrum of information, as currently many potentially useful data are discarded or not included in analysis. Better analysis and exploration tools are needed, and methods also need to be developed and improved to make the most of the useful information from HCS.<br /><br />1. Carpenter, A.E. Image-based chemical screening. Nat Chem Biol 3, 461-465(2007).
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                October
+                29th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/10/29/paper-summary-what-do-we-know-and-when-do-we-know-it-2.html">Paper Summary: "What do we know and when do we know it?"</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Nicholls paper<sup>1</sup> studied how to evaluate two essential aspects of virtual screening: experimental design and performance metrics. First the author claimed that for any prediction study, four elements to be evaluate: <ol><li> whether it is well designed</li><li>what metrics are used for evaluation</li><li>significance, or error analysis</li><li>whether the results are particular or general</li></ol>He pointed out that virtual screening research lack of adequate consideration on any of these issues, but he expected the situation will be better as people became more educated in these issues. The author then discussed the experimental design evaluation. First he discussed how to choose decoys, which is a type of intensive properties, when designing a retrospective screen. He listed four types of decoy sets: universal, drug-like, mimetic and modeled. Universal decoys are any compounds available to be physically screened, drug-like decoys are drug like compounds, and mimetic decoys are similar decoys while modeled decoys are specific to methods and models. He suggests to use a decoys set that contain all the above categories with careful labeling of individual intent. For extensive properties, the author first pointed out several points based on quantitative analysis, 1. the number of actives are important, but the number of inactives are not, when calculating properties of a single system. 2. when testing a method against other methods with 95% confidence level, the number of systems required is very large. 3. the number of actives per target doesn't need to be large. He then discussed the importance of the study of correlations between methods. He discussed several metrics for evaluating the performance of an experimental design: AUC, ROC, BedRoc. He showed that none of these methods could perfectly solve recognition problem. However, he also pointed out that BedRoc is a better method comparing to the others. 1. Nicholls, A. What do we know and when do we know it? Journal of Computer-Aided Molecular Design 22, 239-255(2008).
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                October
+                13th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/10/13/paper-summary-structure-activity-landscape-index-identifying-and-quantifying-activity-cliffs-2.html">Paper Summary: "Structure-Activity Landscape Index: Identifying and Quantifying Activity Cliffs"</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Guha paper<sup>1</sup> proposed a approach using structure-activity landscape index (SALI) to quantitatively identifying and analyzing the activity cliffs in the activity landscape. SALI is defined by the following:<div align="center">SALI<sub><i>i,j</i></sub> = | A<sub><i>i</i></sub> - A<sub><i>j</i></sub> | / (1 - sim(<i>i,j</i>) )</div>where A<sub><i>i</i></sub>, A<sub><i>j</i></sub> are the activities of the <i>i</i>th and <i>j</i>th molecules. The authors used the SALI values to generate a graph, where each node represents a molecule, and an edge is added between a pair of nodes if the SALI value is over a cutoff value. The SALI graph is directed, and an edge is pointed from the node with a higher activity to the node with a lower activity. The authors also proposed a different way of visualizing and analyzing SAR with SALI - plotting a heatmap of the values, but the discussion and findings are focused on the network based representation.The authors used the SALI network to analyze several SAR models. They showed that lots of SAR characteristics, including activity cliffs, could be identified when changing the cutoff values to generate different resolution of the SALI networks. For example, when changing the value from a larger cutoff value to a smaller value, a broad SAR can be dissected into a set of "smaller" and more detailed SAR components. The author also showed that when the cutoff value is big, only the most significant activity cliffs remain in the SALI network, and by comparing nodes that appear in a SALI network, the nonlinearity of SAR can be analyzed, and key component of SAR can be identified. The authors also performed different computational controls: the similarity metrics doesn't affect the ordering of the node pairs in the SALI graph, but smaller fingerprints will lead to a denser SALI network. The author suggested to use a histogram together with a SALI network to avoid the loss of resolution due to the presence of outliers, and to minimize the effect caused by experimental errors in the dataset. They also discussed future works such as use of activity differences to weight the edges in the network, and to use SALI network to predict the ordering of activities of molecules.  1. Guha R, VanDrie J. Structure-Activity Landscape Index: Identifying and Quantifying Activity Cliffs. J. Chem. Inf. Model. 2008 Mar 24;48(3):646-658.
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                October
+                13th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/10/13/paper-summary-structure%25e2%2588%2592activity-relationship-anatomy-by-network-like-similarity-graphs-and-local-structure%25e2%2588%2592activity-relationship-indices-2.html">Paper Summary: "Structure−Activity Relationship Anatomy by Network-like Similarity Graphs and Local Structure−Activity Relationship Indices"</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Wawer paper<sup>1</sup> extended the research in the Petalson paper<sup>2</sup> in SARI (SAR Index). Instead of using the global SARI score for the whole SAR model in the original Patalson paper, this paper introduced two new methods: local SARI discontinuity score that could be used to identify compounds that were responsible for introducing activity cliffs, and network-like similarity graphs (NSGs) could be used to visualize and analyze SAR characteristics and regions. The local discontinuity score was calculated by all compound pairs formed by a molecule and all others within the activity class that were over a similarity threshold. NSGs were built by adding an edge between two nodes(molecules) when their similarity was above a threshold (0.65 in this paper). In addition, each node was color-coded with their potency values, and its size represents the value of the local discontinuity score of the molecule. Thus the NSGs can be used to convey five levels of information: pairwise similarity, compound clusters, potency distribution, SAR discontinuity and activity cliffs, and cluster SARs. The topology of the NSGs of several data sets clearly illustrated different characteristics of different types of SARs: continuous SARs NSGs had a high degree of intraclass structural diversity; discontinuous SARs NSGs contained a single and densely connected major cluster; heterogeneous-constrained SARs NSGs exhibited a few densely connected components around apparent activity cliffs; heterogeneous SARs NSGs consisted of several distinct components. In addition, analysis of cluster SARs could be used to identify compounds that represent different local SARs within activity classes and such compounds could represent the start and end compounds in lead optimization pathway. The four classes of SARs also showed different types of distribution of cluster discontinuity scores, and such analysis can clearly identify the SARs characteristics. Furthermore, molecular pairs with high similarity score and hight discontinuity score could be identified as key compounds that are responsible for introducing activity cliffs, and the paper showed that deleting these key compounds will reduce the SAR discontinuity score. <br /><br />1. Wawer M, Peltason L, Weskamp N, Teckentrup A, Bajorath J. Structure−Activity Relationship Anatomy by Network-like Similarity Graphs and Local Structure−Activity Relationship Indices [Internet]. J. Med. Chem. 2008 Sep 18;[cited 2008 Oct 1 ] Available from: http://pubs3.acs.org/acs/journals/doilookup?in_doi=10.1021/jm800867g<br />2. Peltason L, Bajorath J. SAR Index: Quantifying the Nature of Structure-Activity Relationships. J. Med. Chem. 2007 Nov 15;50(23):5571-5578.
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                October
+                13th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/10/13/paper-summary-on-outliers-and-activity-cliffs-why-qsar-often-disappoints-2.html">Paper Summary: On Outliers and Activity Cliffs - Why QSAR often disappoints</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Maggiora paper<sup>1</sup> is a very short paper, but it points out one fundamental reason of QSAR models disappoints: activity cliffs. This paper's is so important in the activity landscape research, that it is cited by all the other four papers summarized below. The paper pointed out that because <i>similar</i> molecules can show significantly different biological activities, activity are often mispredicted for these molecules, even when the overall predictivity of the models are high. The author explained this by introducing the concept of <i>activity landscape</i>, which is related to the chemical space representation of the compounds. Then she introduced another concept <i>activity cliffs</i>, which is the area in the activity landscape that very similar molecules possessing very different activities. She also pointed out that outliers may reflect the presence of activity cliffs and additional compounds need to be analyzed in the neighborhood of the cliffs to ensure the landscape are adequately represented. She also discussed the lack of invariance of chemical space could be a crucial issue in QSAR models, as the distance relationships of molecules will not be preserved in different spaces. 1. Maggiora G. On Outliers and Activity Cliffs-Why QSAR Often Disappoints. J. Chem. Inf. Model. 2006 Jul 24;46(4):1535.
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                October
+                13th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/10/13/paper-summary-assessing-how-well-a-modeling-protocol-captures-a-structure%25e2%2588%2592activity-landscape-2.html">Paper Summary: "Assessing How Well a Modeling Protocol Captures a Structure−Activity Landscape"</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Guha paper<sup>1</sup> introduced a new concept, SALI curve,  based on the <a href="http://c13s.com/?p=23">SALI paper</a> reviewed previously. First they explained that in real world drug discovery, a model to correctly predict the ordering of a pair of molecules is crucial, while the prediction of the actual potency value is not always necessary. Thus, in this paper, they focused on using SALI curve to analyze how well a model was able to predict the ordering of activities of molecules. A SALI curve is a plot of a function <i>S(X)</i>, which is a quantitative measure of the model's ability to predict edge directions correctly in a SALI graph with a threshold <i>X</i>. A value of S(X)=1.0 indicates a perfect prediction, -1.0 indicates a perfect misprediction, and 0.0 corresponds to random predictions. The author also introduced SCI (SALI curve integral), which can summarize the curve numerically. The value of S(0,0) represents the ability of the model to capture all SARs in the dataset, the value of S(1,0) represents the models ability to capture the most significant cliff. The authors found that the SALI curves correlated to the measurement based on RMSE and r<sup>2</sup> values when comparing two models on one dataset. Studying the SALI curves for 4 2D QSAR models and 2 3D QSAR models, the authors also showed that S(0,0) values of these models correctly indicated the quality of these models, but the S(1,0) values not always correlated to the measurements of RMSE, and they explained the behavior is caused by the presence of lots of pairs of stereoisomers with Tanimoto similarity being 1.0. The authors then discussed the behavior of SALI curves when performing Y randomization and adding noise to the dataset. They found that increasing noise was likely to drive the curves downward, and the change of the curve near X=1.0 was more sensitive to the noise. At last, the authors pointed out that the SALI method provided a framework for better understanding of what types of models better encode a SAR and what aspects of SAR they encode. It can be used a basis for applicability domain analysis, and as indiciation of model overfitting or experiment errors. 1. Guha R, Van Drie JH. Assessing How Well a Modeling Protocol Captures a Structure−Activity Landscape. J. Chem. Inf. Model. 2008 Aug 25;48(8):1716-1728.
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+
+        <article class="home">
+
+            <span class="post-date">
+                
+                October
+                10th,
+                
+                2008
+            </span>
+
+            <h2>
+                <a href="/2008/10/10/paper-summary-sar-index-quantifying-the-nature-of-structure-activity-relationships-2.html">Paper Summary: "SAR Index: Quantifying the Nature of Structure-Activity Relationships"</a>
+            </h2>
+
+            <div>
+                
+                    
+                        The Peltason paper<sup>1</sup> discussed the development of a function term "SAR Index" (SARI) that is based on the pairwise 2D similarity and compound potency. They showed how to use SARI score to measure the characteristic of SARS and categorize them as continuous, discontinuous, heterogeneous-relaxed, or heterogeneous-constrained. SARI value is based on the complementary score value of two scores that can be used to measure the continuity and discontinuity of SARs, score<sub>cont</sub>, and score<sub>disc</sub>. The continuity score is calculated by potency-weighted mean of pairwise similarity, and the discontinuity score is the mean of multiplication of the potency difference and the similarity of ligand pairs with the similarity value over a threshold. Thus, ligands with high potency but low potency difference will contribute more to the continuity score, and similar ligands with big potency differences will contribute to the discontinuity score. From how the continuity score is calculated, we can also derive that highly similar ligands with high potency but low potency difference will contribute less than less similar ligands, which means that the continuity score also depends on the diversity of the ligands of high potency and low potency differences. Based on the SARI, SARs can be categorized as continuous if it has high SARI score (high continuity score but low discontinuity score), discontinuous on the contrary. Discontinuous SARS are dominated by the influence of an activity cliff, as shown by the authors with two sample data sets: Ribonuclease, and Adenosine Deaminase. If both continuity score and discontinuity score are high, then the SAR has medium SARI score, and it's called heterogeneous-relaxed, which means that in this kind of SAR the ligands of similar high potency are structurally diverse, and structurally similar ligands can have very significantly different potency. The last category of SAR is heterogeneous-constrained, which is characterized by medium SARI (low continuity score and low discontinuity score). In this kind of SAR, the low continuous score is caused by a structurally constraint. The author studied results from 6 enzyme inhibitor sets to show how the SARI can quantitatively describe the nature of SARs. The authors concluded that SARI can be used to classify SARs quantitatively and also in other practices such as identification of the structurally diversity of ligands with similar activity. 1. Peltason L, Bajorath J. SAR Index: Quantifying the Nature of Structure-Activity Relationships. J. Med. Chem. 2007 Nov 15;50(23):5571-5578. (<a href="http://dx.doi.org/10.1021/jm0705713">10.1021/jm0705713</a>)
+
+
+
+                    
+                
+            </div>
+
+        </article>
+
+<hr/>
+
+<ul class="pager"> 
+
+  
+    <li class="previous">
+      
+        <a href="/page3">&larr; Newer</a>
+      
+    </li>
+  
+  
+  <li>
+          <span class="page_number">Page: 4 of 5</span>
+  </li>
+
+  
+    <li class="next">
+            <a href="/page5">Older &rarr;</a>
+    </li>
+  
+
+</ul>
+
+
+
+
+			<!-- footer.html -->
+<footer>
+ <hr/>
+ <p>
+ 	&copy; 2013 Dazhi Jiao with Jekyll. Theme: <a href="https://github.com/dbtek/dbyll">dbyll</a> by dbtek.
+ </p>
+</footer>
+
+<!-- footer.html end -->
+
+
+		</div>
+
+    
+	<script type="text/javascript" src="/assets/resources/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/assets/resources/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/assets/js/app.js"></script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-7715423-15']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+   </body>
+
+</html>
+
+

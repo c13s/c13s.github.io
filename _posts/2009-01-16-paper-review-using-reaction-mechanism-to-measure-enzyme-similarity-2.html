@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'Paper review: "Using Reaction Mechanism to Measure Enzyme Similarity"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '6391817161791766748'
+  _elasticsearch_indexed_on: '2009-01-16 17:16:00'
+---
+The O’Boyle paper described novice quantitative methods to measure the similarities of reactions based upon their mechanisms. The first method was based on fingerprints (FP) calculated from a list of 58 features that described the mechanism steps. After steps were encoded using these features and normalized, they could be compared with similarity comparison. The second method was based on bond changes (BC) occurred in a mechanism step, and the similarity was measured with Tanimoto coefficient. The similarity between two reactions was calculated by pair wise aligning the two mechanisms based on their steps. The results of the two methods displayed reasonable overlaps in finding the most similar enzyme reactions when applied to MACiE dataset. Comparing to the Enzyme Classification (EC), these methods were able to find similarities between reaction mechanisms that appear in different EC classes, as illustrated by a few examples given by the paper. The paper clearly discussed the implication of both the FP and MC methods and explained the features used in the FP methods and described how they can classify chemical reaction mechanisms, as well as what are specific to enzyme catalyzed reactions. I think one interesting discussion could be whether the number of steps (or the complexity of the mechanism) of the mechanism can play a role in the similarity measuring with the two methods. Another extension from this paper might be using these two methods, or especially the features in the FP methods, to cluster the enzymes in the MACiE database and compare the result to the EC classification. br /br /1. O'Boyle, N.M. et al, "Using Reaction Mechanism to Measure Enzyme Similarity", J. Mol. Bio., 2007, 368, 1484-1499 (10.1016/j.jmb.2007.02.065)

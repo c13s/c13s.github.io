@@ -1,0 +1,27 @@
+---
+layout: post
+title: List of COGs (another example of how powerful SED is)
+categories:
+- Bioinformatics
+- Programming
+tags:
+- COG
+- Data
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"4343193";s:7:"blog_id";s:7:"6714149";s:9:"mod_stamp";s:19:"2013-01-23
+    15:16:25";}
+  _elasticsearch_indexed_on: '2013-01-23 15:14:09'
+---
+To get a table of <a href="http://www.ncbi.nlm.nih.gov/COG/" title="COG" target="_blank">COGs</a> (Clusters of Orthologous Groups) with their category code and name, a one liner sed command can do the job:
+
+<code>
+&gt; wget ftp://ftp.ncbi.nih.gov/pub/COG/COG/whog
+&gt; sed -n 's/\[\(.*\)\] \(COG[0-9]*\) \(.*\)/\1\t\2\t\3/p' whog &gt; cog.tab
+</code>
+
+Download the table: <a href="https://www.box.com/s/fzrtcq21r39cgmu26veo" title="cog.tab" target="_blank">cog.tab</a>
+

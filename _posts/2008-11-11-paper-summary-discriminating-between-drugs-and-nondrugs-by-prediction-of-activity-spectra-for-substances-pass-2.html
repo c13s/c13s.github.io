@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Paper Summary: "Discriminating between drugs and nondrugs by prediction of
+  activity spectra for substances (PASS)"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '6783393712144633849'
+  _elasticsearch_indexed_on: '2008-11-11 16:31:00'
+---
+The Anzali paper<sup>1</sup> uses PASS (prediction of activity spectra for substances) system to predict drugs and nondrugs. They used the a subset of the World Drug Index (WDI) and Available Chemicals Directory (ADS) as their training set. They first built biological activity spectrum based on SAR analysis of a large data set (&gt; 30k compounds). They then used 5k compounds in WDI and 5k compounds in ADS to train the prediction model based on the biospectra. The method was evaluated using testing set from MDDR. The accuracy of their prediction model is 80% when testing with LOO(leave-one-out). When testing with a dataset of all drugs, the accuracy is 73.4% or 78.5% when the drugs being investigated removed from the testing set. When testing with nondrugs, the accuracy is 83.8%. The authors also showed that when testing with drugs from top-100 prescription pharmaceuticals, 87.5% were correctly predicted. 1. Anzali, S. et al. Discriminating between Drugs and Nondrugs by Prediction of Activity Spectra for Substances (PASS). J. Med. Chem. 44, 2432-2437(2001).

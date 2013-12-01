@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Paper Summary: "Structure−Activity Relationship Anatomy by Network-like Similarity
+  Graphs and Local Structure−Activity Relationship Indices"'
+categories: []
+tags: []
+status: publish
+type: post
+published: true
+meta:
+  blogger_blog: c13s.blogspot.com
+  blogger_author: djiao
+  blogger_6253bd7e6fe76b5f854e34389ec53677_permalink: '3198529655575850559'
+  _elasticsearch_indexed_on: '2008-10-13 19:36:00'
+---
+The Wawer paper<sup>1</sup> extended the research in the Petalson paper<sup>2</sup> in SARI (SAR Index). Instead of using the global SARI score for the whole SAR model in the original Patalson paper, this paper introduced two new methods: local SARI discontinuity score that could be used to identify compounds that were responsible for introducing activity cliffs, and network-like similarity graphs (NSGs) could be used to visualize and analyze SAR characteristics and regions. The local discontinuity score was calculated by all compound pairs formed by a molecule and all others within the activity class that were over a similarity threshold. NSGs were built by adding an edge between two nodes(molecules) when their similarity was above a threshold (0.65 in this paper). In addition, each node was color-coded with their potency values, and its size represents the value of the local discontinuity score of the molecule. Thus the NSGs can be used to convey five levels of information: pairwise similarity, compound clusters, potency distribution, SAR discontinuity and activity cliffs, and cluster SARs. The topology of the NSGs of several data sets clearly illustrated different characteristics of different types of SARs: continuous SARs NSGs had a high degree of intraclass structural diversity; discontinuous SARs NSGs contained a single and densely connected major cluster; heterogeneous-constrained SARs NSGs exhibited a few densely connected components around apparent activity cliffs; heterogeneous SARs NSGs consisted of several distinct components. In addition, analysis of cluster SARs could be used to identify compounds that represent different local SARs within activity classes and such compounds could represent the start and end compounds in lead optimization pathway. The four classes of SARs also showed different types of distribution of cluster discontinuity scores, and such analysis can clearly identify the SARs characteristics. Furthermore, molecular pairs with high similarity score and hight discontinuity score could be identified as key compounds that are responsible for introducing activity cliffs, and the paper showed that deleting these key compounds will reduce the SAR discontinuity score. <br /><br />1. Wawer M, Peltason L, Weskamp N, Teckentrup A, Bajorath J. Structure−Activity Relationship Anatomy by Network-like Similarity Graphs and Local Structure−Activity Relationship Indices [Internet]. J. Med. Chem. 2008 Sep 18;[cited 2008 Oct 1 ] Available from: http://pubs3.acs.org/acs/journals/doilookup?in_doi=10.1021/jm800867g<br />2. Peltason L, Bajorath J. SAR Index: Quantifying the Nature of Structure-Activity Relationships. J. Med. Chem. 2007 Nov 15;50(23):5571-5578.

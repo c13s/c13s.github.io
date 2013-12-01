@@ -1,0 +1,31 @@
+---
+layout: post
+title: KEGG organism code to NCBI taxonomy id mapping
+categories:
+- Bioinformatics
+- Programming
+tags:
+- Data
+- kegg
+status: publish
+type: post
+published: true
+meta:
+  _publicize_pending: '1'
+  tagazine-media: a:7:{s:7:"primary";s:0:"";s:6:"images";a:0:{}s:6:"videos";a:0:{}s:11:"image_count";i:0;s:6:"author";s:7:"4343193";s:7:"blog_id";s:7:"6714149";s:9:"mod_stamp";s:19:"2012-12-04
+    19:14:10";}
+  _elasticsearch_indexed_on: '2012-12-04 18:50:52'
+---
+KEGG organisms are assigned 3 letter codes, e.g., "hsa" for homo sapiens. To map these codes to the NCBI taxonomy ID, a one-liner sed command is sufficient:
+
+First download by copy n' paste from <a href="http://www.genome.jp/kegg-bin/get_htext?query=&amp;htext=Organisms&amp;filedir=&amp;option=-e&amp;extend=F65F548C25-2E42-3&amp;uploadfile=&amp;format=&amp;wrap=&amp;length=&amp;open=&amp;close=&amp;hier=18&amp;oneclick=on">the KEGG taxonomy page</a>:
+
+Save it to a text file <a href="https://www.box.com/s/hsmvie7vgjdj1z3g0iuf">kegg_taxonomy.txt</a>
+
+Then sed:
+
+[sourcecode]
+sed -n 's/.*\[TAX\:\([0-9]*\)\] \[GN\:\([a-z]\{3\}\)\].*/\2 \1/p' kegg_taxonomy.txt &gt; kegg2taxonomy.txt
+[/sourcecode]
+
+Download <a href="https://www.box.com/s/6jfb8a4kyphgsxrlj4e5">kegg2taxonomy.txt</a>
