@@ -44,6 +44,7 @@ Replace `<h1>{{ page.title }}` with `{% if page.title != 'dbyll' %} {{ page.titl
 - `_includes/header.html`
 Replace `<title{{ page.title }}</title>` with
 `<title>{% if page.title == 'dbyll' %} WenKu {% else %} {{ page.title }} {% endif %}</title>`
+
 	   
 Start jekyll local server to check if it works correctly. 
 
