@@ -10,14 +10,13 @@ description: Discovering Structures in the Unstructured World
 author:
   name: Dazhi Jiao
   email: dazhi.jiao@gmail.com
-  github: jiaoda
-  twitter: djiao
-#  pinterest: asd123
-#  linkedin: asd123
-#  resume: asd123
+  github: c13s
+  twitter: c13s
+  pinterest: c13s
+  linkedin: c13s
+  resume: c13s
   bio: PhD Candidate in Informatics
   email_md5: f8b15710826162fbdc7cfb33d1ba9187
-#  email_md5: 726351295ec82e145928582f595aa3aa
 
 rss_path: feed.xml
 categories_path: categories.html
