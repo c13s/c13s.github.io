@@ -73,3 +73,7 @@ footer {
 	padding-top: 15px;
 	font-family: 'Ubuntu';
 }
+
+article img {
+    max-width: 675px;
+}
