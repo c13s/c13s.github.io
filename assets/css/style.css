@@ -107,3 +107,7 @@ footer {
     left: inherit;
     right: 0px;
 }
+
+article img {
+    max-length: 675px;
+}
